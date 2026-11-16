@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "deliver",
+  "type": "architecture",
+  "input": "D:\\Work\\github-p\\UnifiedModel\\doc\\assets\\测试执行-UModel关系图.architecture.json",
+  "output": "D:\\Work\\github-p\\UnifiedModel\\doc\\assets\\测试执行-UModel关系图.html",
+  "specification": {
+    "sha256": "60df9161db2f588c16b97e5a3e5d83a490dab35dda154a2006666bcff80d4a45",
+    "bytes": 4944
+  },
+  "artifact": {
+    "sha256": "e3aa8dbda8f5fb0f3ca83c0ad455ee15e383c5580404db8e941a5f73b01a8ce6",
+    "bytes": 716955
+  },
+  "validation": {
+    "checksPassed": 9,
+    "checkCount": 9,
+    "compositionProfile": "showcase",
+    "compositionStatus": "pass",
+    "errors": 0,
+    "warnings": 0
+  }
+}

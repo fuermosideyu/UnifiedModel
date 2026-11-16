@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "测试执行 · UModel 关系模型（拟建）",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [1320, 790],
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "backend": { "label": "EntitySet · 领域对象类型" },
+        "frontend": { "label": "RunbookSet · 知识与技能定义" },
+        "messagebus": { "label": "DataSet · 测试数据定义" },
+        "database": { "label": "Storage · 存储元数据" }
+      }
+    },
+    "views": [
+      { "id": "test-design", "label": "用例与能力", "focus": ["feature", "testcase", "script", "action", "diagnostics"], "note": "拟建领域关系：用例验证特性，脚本实现用例并调用 AW，AW 使用维测能力。" },
+      { "id": "run-evidence", "label": "执行与证据", "focus": ["testcase", "run", "environment", "testdata", "storage"], "note": "TestRun 固定定义版本并关联环境；data_link 和 storage_link 描述证据的查询映射。" },
+      { "id": "knowledge-entry", "label": "知识与 Skill", "focus": ["testcase", "runbook"], "note": "通过 runbook_link 发现适用的 Knowledge 和 Skill；真实工具由 Runtime 注册和执行。" }
+    ]
+  },
+  "components": [
+    { "id": "feature", "type": "backend", "label": "特性 / 需求", "sublabel": "EntitySet · feature", "tag": "规范条款与版本引用", "pos": [50, 90], "size": [230, 94] },
+    { "id": "testcase", "type": "backend", "label": "测试用例", "sublabel": "EntitySet · test_case", "tag": "适用条件 · 参数 · 断言", "pos": [380, 90], "size": [230, 94] },
+    { "id": "script", "type": "backend", "label": "测试脚本", "sublabel": "EntitySet · test_script", "tag": "脚本版本与步骤引用", "pos": [710, 90], "size": [230, 94] },
+    { "id": "action", "type": "backend", "label": "AW 能力", "sublabel": "EntitySet · test_action", "tag": "能力契约与实现引用", "pos": [1040, 90], "size": [230, 94] },
+    { "id": "runbook", "type": "frontend", "label": "知识与技能集合", "sublabel": "RunbookSet · test_case.ops", "tag": "文档 / 案例 / 规则 / Skill", "pos": [50, 350], "size": [230, 104] },
+    { "id": "run", "type": "backend", "label": "测试执行记录", "sublabel": "EntitySet · test_run", "tag": "版本绑定 · 状态 · 判定", "pos": [380, 350], "size": [230, 104] },
+    { "id": "environment", "type": "backend", "label": "环境快照", "sublabel": "EntitySet · test_environment", "tag": "设备 / 测试床 / 配置版本", "pos": [710, 350], "size": [230, 104] },
+    { "id": "diagnostics", "type": "backend", "label": "维测能力", "sublabel": "EntitySet · diagnostic", "tag": "命令定义与适配器引用", "pos": [1040, 350], "size": [230, 104] },
+    { "id": "testdata", "type": "messagebus", "label": "测试数据集合", "sublabel": "LogSet / MetricSet / EventSet", "tag": "按 run_id 等字段关联", "pos": [380, 610], "size": [230, 94] },
+    { "id": "storage", "type": "database", "label": "证据存储定义", "sublabel": "Storage · 数据源与字段映射", "tag": "原始日志 / 抓包 / 报告引用", "pos": [710, 610], "size": [230, 94] }
+  ],
+  "connections": [
+    { "id": "case-verifies-feature", "from": "testcase", "to": "feature", "label": "验证", "variant": "emphasis" },
+    { "id": "script-implements-case", "from": "script", "to": "testcase", "label": "实现", "variant": "emphasis" },
+    { "id": "script-invokes-action", "from": "script", "to": "action", "label": "调用", "variant": "emphasis" },
+    { "id": "action-uses-diagnostics", "from": "action", "to": "diagnostics", "label": "使用", "labelDy": 96 },
+    { "id": "case-links-runbook", "from": "testcase", "to": "runbook", "label": "runbook_link" },
+    { "id": "run-executes-case", "from": "run", "to": "testcase", "label": "执行" },
+    { "id": "run-uses-environment", "from": "run", "to": "environment", "label": "绑定环境" },
+    { "id": "run-links-data", "from": "run", "to": "testdata", "label": "data_link", "labelDy": 91 },
+    { "id": "data-links-storage", "from": "testdata", "to": "storage", "label": "storage_link" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "模型定义与实例关系", "items": ["entity_set_link 定义业务关系；实例关系经 EntityStore 写入、.topo 查询。", "RUN-102 executes TC-001；固定用例、脚本与 AW 实现版本。"] },
+    { "dot": "violet", "title": "原图知识资产如何落位", "items": ["Knowledge：文档、案例、规则；Skill：工作方法；维测库：能力对象。", "AW 暂按可复用动作建模；拟建关系须经领域确认。"] },
+    { "dot": "amber", "title": "Agent 与执行器的边界", "items": ["Agent 经 Query Service 发现对象、Knowledge、Skill 与数据查询计划。", "外部 Runtime 校验、执行并回写；规则描述不自动成为门禁。"] }
+  ]
+}
