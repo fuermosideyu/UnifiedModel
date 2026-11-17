@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:c78ea16eb04a11f5160b54670ca8be861633f527a056a58f669af08359ee9dbd",
+  "claims": [
+    {
+      "id": "claim_60810fe883964d12a483892a12750638",
+      "statement": "仓库按责任划分测试层级：`tests/unit` 用于模块单元逻辑，`tests/contract` 覆盖公共契约、Storage interface、MCP 和 SDK，`tests/integration` 覆盖跨模块路径，`tests/e2e` 覆盖 Quickstart 端到端，`tests/golden` 固化查询语义与 explain，`tests/architecture` 执行依赖方向和禁用 API 守卫。",
+      "evidence": [
+        {
+          "resource": "repo://tests/README.md#L3-L12",
+          "version": "repo-lines-v1:sha256:6b28a146224604525ec7fb45717d3e7defc9e95dcfe5f338971153a529fbe94e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiNzhkYjJmMzkwZWU4OTdjYTZmOGI0MDUwMWI4MmExNzc4OGFjOGEyYzA3ZTZmYjE1ZWIzMWVjY2RlYjljYzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxMmM5YWVlZWFhMTU4MzhkMzZjM2UxYjQ4ZjcwYTk4N2E3OGIwYzQ5ZTEyZWVjODNhZTQ4MjkzMDMyYTBhNWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmZGI4MDY5NDk3MzViOTA1MjMxNmQ4NTlkOGRhZmE3N2UxYmQ4MmQ0ODU2ZjM0YzAwYjM4MTkyZDA0MDBjM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_fc6ea0c467a34884b219d142783636ac",
+      "statement": "项目的默认服务测试门禁使用 `go test -race ./...`；`make test` 组合 architecture guard、race-enabled service tests 和 generated SDK verification，而 `make ci` 还包括 embedded schema、service build、capability、quickstart health、manifest、examples 和 schema docs checks。",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L135-L163",
+          "version": "repo-lines-v1:sha256:67b3d962a9a023302511a6f58e24c97aff1fe895acc9b0067baaf46b971257da:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNmMGM2YTgzMWQxNmVkNWE5NWEyNTY1MzY4MTA1YjdiMjA4NjlhZDFhYTVjMWEzMzhkOWY5NGRmNGM5ZjYyOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlOGZjNjcyOGVkMDI0NTUzNzZmYjgyMTg4MDE4YjBlZmM4NTZhYTRmMzdlYjcyZWQzNTJiYTg5YzMyZTY0ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE1NTE5MWU4N2Y2M2Y2ZDEzNDBmYTA2Y2E1YjYzZDNhMzEyYmY3Y2MwOGExNjhjNWRhMjM1YWRmMjZmOWM2MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA2ZjkxZWIxOWJkMDg1NmQ0Y2EzNmQyYWRjMmY4YjQ2M2IzMmY2OTRkM2E3ZTMwNjViNTcyMDhkZTIzNTE2MWIifQ"
+        },
+        {
+          "resource": "repo://Makefile#L203-L221",
+          "version": "repo-lines-v1:sha256:69d722ea54eb7a24e67fe87cf2d03db76c0e943e3d0cfd09e9e6e0fe968fb8c0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5MmFlY2NiZjk5YTdkNzY3OTk4ZjJiYTQzYWRjM2QzOGM3MGRkMjVhYmExNGZkOTAwNzBjNTIwOGUzMzA1YmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNmYyZGNkNWNjZjZkYWQyZGEzMjg5NmJiM2NmYzA4NDQ0NjlkZDhhMzM3NThjZTdmZGUyNWU3MGM3MzQ0NTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM5OWQ5ZTAzMTBiYmRhODk3NTVjYjZkMTgzMjQ4MGM3ZjMxMDBhYmY0OTNjOGY3NjI3NTViOGMwN2YyZGRlZWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmNzA4NjhiZjZjYTY3ZDUxNTE5N2Y1ODU5MGM2NTk2NjE0MjNhNmFiZDVhZDc4NzgzNDM3ZGJhZGQ3MmVlMjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66aebd20fdae41f4a579a0aad2037ba3",
+      "statement": "Query golden 测试同时固定 `.umodel`、`.entity` 和 `.topo` 的 columns、rows、分页、provider、pushdown/fallback、operators、depth 及时间范围说明，因此查询语义或 explain 改动需要检查 golden 结果。",
+      "evidence": [
+        {
+          "resource": "repo://tests/golden/query_golden_test.go#L14-L168",
+          "version": "repo-lines-v1:sha256:8c529dd682353cf310a6afc21ebcbc1b1e905dbfe257c7456099732e0b386d67:eyJzZWxlY3RlZExpbmVDb3VudCI6MTU1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJhNzVhN2UwNGEwNTExOGQ4NTViM2I1ODExMTljYzc0NTBjZTUxZGM0YjZlYWY5ZDZiNzJmYjJiNzMzODhiZjJlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0NGRmYjM4OTc1M2RlY2ViYjk0M2E3NGY0ODc3YmQwM2ViNDBlN2M5ZTFjOWM2ZjA4MDM3YjY3ZjU2YWM4NWY5IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlYjljNjE4YzU2MDZhYzJkZWQ4ODU5OWJjMmVlNmZmZTViYTdkYTU2YjgzYTEyYTY3MThiNTMwNTVkN2Y3MGY0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiYTQwMTM5Yzg0MDIyNGEwYTQ5Y2M0MGE0YzM2M2Y2OWI2ZDAwNDIyOGM5ZDlhMGI0ODkzMjA5YjdmNGM0MjY3In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_9702f24b749049ff8fe301e179b4c40f",
+      "statement": "Query 的 timeout 契约将过期 deadline 映射为 `CodeTimeout`，但将 `context.Canceled` 原样保留为取消错误；该语义在 Query Service 的端到端执行和 Memory GraphStore 对取消 context 的响应中分别受到测试保护。",
+      "evidence": [
+        {
+          "resource": "repo://internal/graphstore/memory_test.go#L253-L266",
+          "version": "repo-lines-v1:sha256:6c86491bd91b164db84b8dfcaa9bcaad18fd7187ab9a2b3a59b0b5ca4b88ae56:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzN2NkZWZiMGJhZGNjZTY0N2YzMzgyZjI3ODA4ZDYwMWZhZTBiYzBkMzM0ZTlmZjlkYjgxNzRmOTM1NjkzOWIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://internal/query/timeout_test.go#L32-L80",
+          "version": "repo-lines-v1:sha256:39c4944df56f3d467b2cbd51e959ad7cd1c5fca0026b6d556ffa3e005e564503:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljMGJhNmU3MjU3MGRhMmJmMTQ2OTc4YzM2YmE0NTcxOGNkYmYyZjc2YTc1MmExNjM2ZDM0Mzg5YzBmOTNiNzMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db13e7d3ba4241fa8d4cdbbdf0d17006",
+      "statement": "GraphStore contract 同时 exercise memory 和 file-memory provider，并验证 workspace/schema、capabilities/health、UModel snapshot、实体与关系查询、时间范围、未来数据和删除结果；provider registry 对默认 Ladybug、显式 memory/file-memory 选择及未知 provider 失败有独立测试。",
+      "evidence": [
+        {
+          "resource": "repo://tests/contract/graphstore_contract_test.go#L15-L73",
+          "version": "repo-lines-v1:sha256:cfb43636974bc7ff9adeac1a9a4bd211bc6f5c383afb67e9b79b972f040b08a2:eyJzZWxlY3RlZExpbmVDb3VudCI6NTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjYzNhODk3MzJlNDFkZDc5NjUwZDdiM2I2ZGM0Y2E0MjAzYjhhMjJiNDMzY2Q3MTRmYzk3ZTRiMmJmZDBmMDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWM2MThjNTYwNmFjMmRlZDg4NTk5YmMyZWU2ZmZlNWJhN2RhNTZiODNhMTJhNjcxOGI1MzA1NWQ3ZjcwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE5NTk0YTY5MDU5NDJlNGMxZTlmN2U4ODQ0OGQ5ZGQzZWJmOGRiODU3YWQ1MzUwODg5MDU5ZjBhMjg1YjM0OWQifQ"
+        },
+        {
+          "resource": "repo://tests/contract/graphstore_contract_test.go#L75-L189",
+          "version": "repo-lines-v1:sha256:70bac85894ef2a99c2350d7762f78741c483c6a777d64ac12a573a555af83a3b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE1LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzMTdlMGY2MTZmYWNjOGJmZGIxZmY4MTVmYjRhNGRjMGI3MWI3ZTI4YTQ1ZjhlZjJkZTU4NjY3NTIzMDgzNWYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlMjJmYWE1MzViZDJlYTNkNTJlNzQxZWQ0NTQ0MzViN2ZlNDllODM1ODZlOTQzZDk4ZDgyYmJmYjI0ZDFmNWM1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYTQwMTM5Yzg0MDIyNGEwYTQ5Y2M0MGE0YzM2M2Y2OWI2ZDAwNDIyOGM5ZDlhMGI0ODkzMjA5YjdmNGM0MjY3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI2ZTgxYTliOTVlMTFkMWExMDA4NjlkMDU0YjBjZTI2ZjQ3ZTFiOGI4YmMwMzlkYjYzZjY0ZjVhMjJmYzM2MjgxIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_565d9a2bd0c6461bacd236d4246f8a4d",
+      "statement": "API-originated UModel import 被限制在配置的 import root 内；绝对越界、`..` traversal、root 内目录 symlink 和目录扫描发现的外部文件 symlink 都必须在读取前拒绝并返回 `INVALID_ARGUMENT`，而 `ImportTrusted` 是显式绕过入口。",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/import_confine_test.go#L14-L59",
+          "version": "repo-lines-v1:sha256:52cfe5da2552a9c7ce437b2fbb86a55ae87def584c8d445c3772c8e34ab301ae:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiNzhlYzhkYzk2NWFlZDE0MGYwZjhlMDA5Yzg3MmY4ZGI2YjI5MDc0NjE2ZmU1YjcwMzc2YmI1Y2Y3NTc4MzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWM2MThjNTYwNmFjMmRlZDg4NTk5YmMyZWU2ZmZlNWJhN2RhNTZiODNhMTJhNjcxOGI1MzA1NWQ3ZjcwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1MDRjOGFlYTZkMThkNTQ4MDFiOGNiN2M5MmVlYTdiNjQ4ZTRmZTJiZGYxZTZjMTYwODk0OWQyYTcxNDZiZjkifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/import_confine_test.go#L61-L118",
+          "version": "repo-lines-v1:sha256:6106646f580c35f7e98db99a0c7faa92d270de0e4fd95d4b8e6f945a8b92eec4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjMThmMjk3Zjk1OGEzMjdiMzlkYzkyZTQ1NGE1NzI2NGU4ZGEzMGM4NWQ4NDZkNzFkNjdhYjBiNGQwZWY5MTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_abde422d6cc74844bae9c9cb87d26a7b",
+      "statement": "file-memory provider 会把 UModel、实体和关系持久化到 workspace 文件，重启后恢复并支持 legacy single-file 状态迁移；删除后的 UModel 在再次 reopen 后仍不可见，workspace 服务还验证 file-memory/Ladybug 目录恢复及 deleted workspace 不被复活。",
+      "evidence": [
+        {
+          "resource": "repo://internal/graphstore/file_memory_test.go#L116-L180",
+          "version": "repo-lines-v1:sha256:9a2cd204310eabdc8aa938f8a3df59202d1426dc13e585adb31c6f8ff9ec4abd:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3MDg0ODMyMzljOTY5ZDNkN2ZlYTg3ZGVkNDJlOGJlNmZhZGMxOTk3MGJmZmEzYmE0YjE2NjFjY2MzMGI3OWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxODkzOWU1MTZjYThiYTY3OWY2ZTgwZGFkOWRlNTU2MmNlN2I2YmMwMDlhZWRiM2UxNDJiNjQwNWFiMjM2YjkifQ"
+        },
+        {
+          "resource": "repo://internal/graphstore/file_memory_test.go#L13-L114",
+          "version": "repo-lines-v1:sha256:d0ac4b61ac6e3ca0ab22e00519a4429561938d44c92b6582fb746603168e7177:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAyLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0YjQxYWFhOGMwNTU4NjRiMTkwZDNhMWQyZjQyYWRjMDg0OWE0OTczMTk2OWZlYzJiNzY2YWQ0ODJkMzAwODgyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlMjJmYWE1MzViZDJlYTNkNTJlNzQxZWQ0NTQ0MzViN2ZlNDllODM1ODZlOTQzZDk4ZDgyYmJmYjI0ZDFmNWM1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlYjljNjE4YzU2MDZhYzJkZWQ4ODU5OWJjMmVlNmZmZTViYTdkYTU2YjgzYTEyYTY3MThiNTMwNTVkN2Y3MGY0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxZTg3ZTA4OGJmMjVkNWNiOWZjMWIyOWJiMTRlNjAyMmMxNzE3NTYzNmViYjljODU0NDE0MzliMzg2YjQ0NjY2In0"
+        },
+        {
+          "resource": "repo://internal/workspace/service_test.go#L86-L180",
+          "version": "repo-lines-v1:sha256:8c0e641fb4ef2a8ae7bf095bcef2e47ae2330999ccee048ef3f572a5bd39ebee:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2YTEzY2I3NDI3YjhlYzNiZjQzNDYwOWU1MTgyNmUxZDY5NTliZjMxODk3ZjA4ZTI2ZTk1ZjZlYWUyMGQ2MTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxM2RhMzM0MjFmNTE5YjA5Y2NiNzk4NThiYmFhMmY1N2JmOWEzM2MzMWJlZDIwNDY0YzdmY2EwYmVjMDFmNGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ0ZjI1ZDFiMGRmZmIxNDQzMDRjOTU4ZTYzYTY1ZTE4OWU3NGI0NDYxMjQ4ZDBjN2IxMzk3MWJkODJlNGQ2NmQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b3bfaa034e1c4d268ae4a3bb7189d891",
+      "statement": "Quickstart health 和 capability gate 不只是启动烟测：它们校验 manifest 与实体/关系数据计数、domain、seed IDs、entity type 对应的 schema、唯一 ID、跨域关系，并通过 API 验证 UModel/entity/topology 查询、pipeline、ID/topk、Cypher、explain 和 provider 能力。",
+      "evidence": [
+        {
+          "resource": "repo://tests/integration/capability_gate_test.go#L11-L181",
+          "version": "repo-lines-v1:sha256:b0f039704431a65e90f491224969e77e7cf2f435721c13c4014bc437604a4869:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmYjVkNDUwNmMyZDUxMTY5ZjhkNmViZGVjZTZjNDVmY2I2MzczOGFjOTU0N2VkODI2MzlmMzQxMTM0NWJmMDEzIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMzM4Yzc3ZTk3MDE5MzU1NmViNTE0MGYwNzY4MGUxYWFmYzQzNmM5ZTZkNDUwNWVlMjdmODcyZTE5MzA3MDVlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzZGVjZDNlYjUxODQ3ODY4ZjVjNGFmMTZlZDcwZTdkZjFlZTRhZjg0OTVmZmFmZjM2MGE2YWY0OGViNzhlNTEwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxMzM3MTIwNzNjYTI4Y2NkYjNkYzZhNTBhNzM4ZjUwNGNkZjNlOTY5MjBhMjE2MDkyYWJiMzg1ZDE3ZWY2YTFiIn0"
+        },
+        {
+          "resource": "repo://tests/integration/quickstart_health_test.go#L10-L138",
+          "version": "repo-lines-v1:sha256:a8cdd7ffac5fefc05ef1cdedd6cfffe05545d3fb4d29db031e044d5b03ed1d15:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIzOGQzM2RjZDJkYTY5YzEzMmRkZjEzODBiZTcwMDJiYzNlODhmMWIyMzllMmE1ZThiZGQzN2FhNzFlYThiZDJkIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkMzM4Yzc3ZTk3MDE5MzU1NmViNTE0MGYwNzY4MGUxYWFmYzQzNmM5ZTZkNDUwNWVlMjdmODcyZTE5MzA3MDVlIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0OWM4ZjQ1ZmY4YjZiZjk1YTc1NDFlZWI5YzYwY2EzNWM4ZWQwNWVkMzdlYzcxOTAxNjA5MzlhYTZkMmEyODllIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI3NzZmZjFlOWQ4MmNhYjdjMzRiZWRmYTQ5ZmZmY2Q5NzAwZDk5OTUzMWI5NWFjMWIwZDA3YmI1ZmYyNzgyZTNhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_9a4335bef7844fb380f1dec7b8c63492",
+      "statement": "AgentGateway 默认启用只读 query tools、默认关闭写 tools 并暴露显式写能力元数据；discovery 返回结构化 read-only resources 和指向 Query API 的 next actions，resource read 不得泄漏运行时 rows，显式开启写能力后 tool 通过 service layer 执行。",
+      "evidence": [
+        {
+          "resource": "repo://internal/agentgateway/service_test.go#L100-L148",
+          "version": "repo-lines-v1:sha256:62ac25c9b14dbe7ec3ecba56430eb707a0d2e48bd778f72ff3a0cae2eb7c9d8a:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY2MTA4M2ZmODcxNWMwNWU2ZjFjOWRkZTEyODhjMTllNzZiYWFiMDI1ODI3N2FjODNjZTE1N2IyODQzY2Y1NzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImFhMjkyN2IxMjQ0MzY4ZjFmYzg3YWM3MDI4NTczYzYxN2Q5YTI5NTRjZDhkZWIwMmI2ODY0ZDkwNDFiZTM0NGEifQ"
+        },
+        {
+          "resource": "repo://internal/agentgateway/service_test.go#L15-L37",
+          "version": "repo-lines-v1:sha256:2a11678ccff83b5dcdb4f597e02208cf81cff1679e345528c87b742357bba505:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4ZTliMzY2NWQ5ZDk1ZWRlMzllZTIyNDI4ZTJkZTgzNjdiMTZlMmFlZWE0NTkxYmRlNTQ1ZDY2MjUzMDJhODIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWM2MThjNTYwNmFjMmRlZDg4NTk5YmMyZWU2ZmZlNWJhN2RhNTZiODNhMTJhNjcxOGI1MzA1NWQ3ZjcwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ1NDIwZDI1YmQ0YjA5YjBhODEwNzZlMTc1MTk4MDljNGZhMDEwMDRjYjQ1N2MzZmFhYzQwYTg1NTliNjc4YjQifQ"
+        },
+        {
+          "resource": "repo://internal/agentgateway/service_test.go#L194-L220",
+          "version": "repo-lines-v1:sha256:baf0e749a58133d554e3c1ccbb565a7fb216df97bb6f4b655cb3c9f577ce9770:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEyNmYwM2MwMTZiYjU0ZGIzZDQzMmMyYTNiYTQ1ZDhlYzY5ZWMzNGFmNzMxZjQ0ODcxYTFkYzcwOTlhYmM3NGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRlMzQ3MjRhMTg1Y2UzMWFkMjc3NTk0M2MyNjcyN2MwNTdjYTdkZjA2ZTNiYzE5MWVkNGQ0YjdhMDM5M2IzNjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU1MDY5YzUwNTM1Yjk0YzFjY2NkZGJiMWQxZTdmYTE2NjljNDliN2Q4NjY4YjIyOTFkNTdlNWYyMGEzM2I1ODUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_b9333a03e0964e57abc16215344dcc6c",
+      "statement": "MCP 业务流以 JSON-RPC 覆盖 initialize、tools/list、tools/call、resources/list、resources/read、query examples、structured content、linked skill/knowledge 加载及默认关闭的 `entity_write`；公共契约测试还校验 MCP schema 的 transport、method、input/output schema 和 capability metadata。",
+      "evidence": [
+        {
+          "resource": "repo://tests/contract/public_contract_test.go#L68-L91",
+          "version": "repo-lines-v1:sha256:fadeaf8bc43a131133ced6b2c4b9d82c9887657538a1d0a539c9bb5fd4211a5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIwZGM1NWQ4ZTc3NGFmMGNhNTU0ZDczZDU1Yjk1YWFmOWExNzYyMmNjZmE1NzQzYWM2NmEyNWU2NTIzOTU4NzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/e2e/mcp_business_flow_test.go#L12-L72",
+          "version": "repo-lines-v1:sha256:b66f905f14d95e40c8a3712396e1ecb2d668c25fbc94680bc08759f4d646ee19:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MzlkNzBkNGE5NjY5ZjNiN2Q1YzQ0ZTQ2M2M1YzE0MDA2YzNlNmIzMDA1NzY2M2EyNjBhYzJjNTQwZWU1MjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YzhmNDVmZjhiNmJmOTVhNzU0MWVlYjljNjBjYTM1YzhlZDA1ZWQzN2VjNzE5MDE2MDkzOWFhNmQyYTI4OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3OGEyMzVjM2MyNjQyYjFkODQwM2NlMjY3NGRiYmYzZTc4NDU3ZDA4N2M0N2I1YzQ1NmZhZjQ1OGYwMGEyNDYifQ"
+        },
+        {
+          "resource": "repo://tests/e2e/mcp_business_flow_test.go#L74-L109",
+          "version": "repo-lines-v1:sha256:b6f87c281d2d7af33bd769b018db1a8989281d8cf61edc64de4e407d9f1b68f5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRiMmE3MWQ1Yjc0YjA2ZmRiYWYwY2ZmOTRiNzM3YThmNTgwNjY2ODZhOGU2MTc2YzAwZTBjMjBmNWJiM2U4ODUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1YTM3NmQ5ZWUwN2E1ZDZkZjg3YTNhNTFjNjI4M2JmMTQ3YmJjNzQxOTI2MjcwYTk5NTAwYTNlY2RmZjA2Y2EifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c52b9f258d1497b9cdffc2c4896f882",
+      "statement": "REST 业务 E2E 覆盖 workspace tombstone、UModel validate/put/import、实体和关系 current/historical 生命周期、topology explain、非法 query、Agent resource 隔离和默认禁用写 tool；CLI E2E 则构建真实 `umctl` 并通过公共 HTTP contracts 覆盖 workspace、UModel、entity/topo、query、agent、expire/delete。",
+      "evidence": [
+        {
+          "resource": "repo://tests/e2e/business_flow_test.go#L17-L206",
+          "version": "repo-lines-v1:sha256:683c50fb23e7e58ef5c8a09e30f87f16c601d613250995116337e6fc7ed5b2d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0YjNjYjAzMTBlZWM2MDQ4MTViYjEwZGYyMGJlNDJkZTI3N2M1YmY5MDk1Zjk5N2RkMzczMGFjMzVkYjI0ZGYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlMjJmYWE1MzViZDJlYTNkNTJlNzQxZWQ0NTQ0MzViN2ZlNDllODM1ODZlOTQzZDk4ZDgyYmJmYjI0ZDFmNWM1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzZGVjZDNlYjUxODQ3ODY4ZjVjNGFmMTZlZDcwZTdkZjFlZTRhZjg0OTVmZmFmZjM2MGE2YWY0OGViNzhlNTEwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4YzQ4NzUyNjA5MjFkNmZjOTIwY2U1NmExYzc5MjJmMThiMDdkMjJjZmI5ZDk4Mjk0MzcxZWNjNmUxY2UxZDE5In0"
+        },
+        {
+          "resource": "repo://tests/e2e/cli_business_flow_test.go#L15-L106",
+          "version": "repo-lines-v1:sha256:58ad1e3c187704292c5c9b92356d3e07e3c04284ef09077768200c1f81180e3d:eyJzZWxlY3RlZExpbmVDb3VudCI6OTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFiODdmNDFhZGE1ZDBiZmIyZDM0MjNhMjMyMTBiYmVkMWJkZTI3YWE0ZDFlMGY5Y2QyY2UwZGFjNDFkMjlkZmUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZWNkM2ViNTE4NDc4NjhmNWM0YWYxNmVkNzBlN2RmMWVlNGFmODQ5NWZmYWZmMzYwYTZhZjQ4ZWI3OGU1MTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ3NzgzNTUxMjJkMjQ5YzJmNDdiZGE0NzVlYTg3NGMxNWY4MTdjYWJiMmM4NmY2MWE4ZTkyZGM2MzdhOGU1OWQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c0d555561a643ffab5fba89f3c74023",
+      "statement": "HTTP/UI 边界测试覆盖 SPA 深层路由与静态 asset、编码和多级 path traversal 防泄露、loopback CORS preflight/API response；Playwright 使用 Chromium 和 `http://localhost:5173`，验证查询/explain、explorer、提交预览错误与成功、API Debugger、Quickstart 数据及 explorer 的 2000 条 UModel 查询限制。",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/cors_test.go#L9-L43",
+          "version": "repo-lines-v1:sha256:803225907b98c9eb2739706d1b58edd0b9de3532981492b8faf021d5a3c26011:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5NTA0YjZmMTM3OGZmNjM0YWVhNWJjNTI5YmZkMTM1MWZkYWZmOTA4MTY3MjE0ODdkMWY3OGIwNjA5ZjIwMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YzhmNDVmZjhiNmJmOTVhNzU0MWVlYjljNjBjYTM1YzhlZDA1ZWQzN2VjNzE5MDE2MDkzOWFhNmQyYTI4OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://internal/bootstrap/spa_traversal_test.go#L11-L47",
+          "version": "repo-lines-v1:sha256:8b9cfb944d51e8ebc5772910678b8a6d28dcf4e1606ba7d0b57cc128a6741c72:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmYjJhMjcwNDRiNDJmM2ExNGUxZjQ5MjNhZmYyNTFmYjNhMWE2OTkyY2NkYmEyNGVkMjkyOWIxYTRiMDU1ZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YzhmNDVmZjhiNmJmOTVhNzU0MWVlYjljNjBjYTM1YzhlZDA1ZWQzN2VjNzE5MDE2MDkzOWFhNmQyYTI4OWUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/integration/http_flow_test.go#L210-L251",
+          "version": "repo-lines-v1:sha256:4536579d5392c73f9e3be19cb48c2405110316fabe72e017d778c7d97a845bed:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjNGE0OGU0YmU5NTFkMWUzMjJjM2ViM2I5ZmI3OWQwZTkyOWE2YjBiMTliYjg4NmU3ZWRkMGEwOGIzN2IyY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBmZmM5NmUwYzkxNDNkMmNjOGJiOTlhN2NiMWY2NDYwMzkzNjQ2MmVlNzc3NmNjMjM2ZjNjNzY1ZWVmMmEwYjQifQ"
+        },
+        {
+          "resource": "repo://web/e2e/query-capability.spec.ts#L8-L173",
+          "version": "repo-lines-v1:sha256:4d7b1095711ab2ecf7c9cc69b778fc5063f34ae80d4d3251ef28ca9eced075ae:eyJzZWxlY3RlZExpbmVDb3VudCI6MTY2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI2YTExZGViZjUyMjdjYTU0OGVjZjJjZDE1ZDMyOTAzM2NhYzcwNWIxNGI2NzNkYzEwMDBmYWY5YzRiZTAwNjU3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjYmI2NWM0Mjg4Y2Y3OWU3ZGU0ZTY5NDVkMzg3ZGNlYmY4YmE1MDkxOTg1ZGVjMWEyNzNmM2M1ZjU3YWMwYzYxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI0YTQyYTAyZjY3YmE3Mzk5YmIyZjY3YWM3NWY0YjhmNWEwNWMzNjlmNTBjNGE0MjE3NDJjMmUyNjU2OTMzMDhiIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MSwiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxMGE4ZjYwZmUzYzUwYjBjZjUzNDcyMjExM2ZlOTBkNzM0MTQzODdjZTkyZTU5NzhjODJjYmQ4MDFjYzA1MDBkIn0"
+        },
+        {
+          "resource": "repo://web/e2e/umodel-explorer.spec.ts#L3-L50",
+          "version": "repo-lines-v1:sha256:558e119227a20bbc1471d0178783c00400ee0f8ae9b1e960168b4673cae0d011:eyJzZWxlY3RlZExpbmVDb3VudCI6NDgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZkMjg4MWY0NThmMWQyNjQ3ODE2NDlkZTg3NjhlMTFiYmQ5NmMxOTIwNDE1OGNlOWZkMTYyNjRiNmQ1NmM2YmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwYThmNjBmZTNjNTBiMGNmNTM0NzIyMTEzZmU5MGQ3MzQxNDM4N2NlOTJlNTk3OGM4MmNiZDgwMWNjMDUwMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVhMDIxZDI5MDE5ZDI1ZjI0MjgwYjVmMjdlMzFiNjQyMDA5OTE0NzcxZjg2MjNiNDU1NWQ5MzM5NDYzZDYzOWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://web/playwright.config.ts#L3-L17",
+          "version": "repo-lines-v1:sha256:9de8cd535a548de8e37e53a45896a2d15b5e43f9be35898d52280c2edc28c42a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRjMTBkM2I2YjdlNzNlYWU4YjljY2M5ZjhiZGU5Njc4ZTRjMzk2ODk5OGI2YjA0N2VhN2QzNmI4NmE5M2Q3ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlYWE0OWFlYzQyZjJiN2E4YzlmZjdmMmI0M2IzMDM3Nzc4Y2JjZDI3OWQ2MjU1ZTJlNWM0NjcyYWEzZDA5MTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjoyLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlNDhhM2RhNThiMDI5NmNmODg3ZTZjZmRkNDg2YTZhZTVhNDNiN2VjYjk4NWVmMjVlYjBlZmFjMmRjZTY0N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEwYThmNjBmZTNjNTBiMGNmNTM0NzIyMTEzZmU5MGQ3MzQxNDM4N2NlOTJlNTk3OGM4MmNiZDgwMWNjMDUwMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d71dc181c3534efa9c58358e660bcddf",
+      "statement": "schema 与生成资产的本地验证链由 `make expand`、`schemas-embed-check`、`docs-schema-check`、`example-validate`、`check-manifest` 和 `make verify` 组成；生成 SDK 验证分别检查 Go build/vet/test、Python import/test，以及可用时 Java Maven compile/test。",
+      "evidence": [
+        {
+          "resource": "repo://Makefile#L165-L218",
+          "version": "repo-lines-v1:sha256:e8321d4ed75ab0155de5315b4c68d23ff6742721dd872ff9f6b385b055ff1564:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEzMTcyY2Q2N2NiYTcwNjdlNWQ1ZjQ1Y2M1NmYwMGMxM2IxODg2YTkyOGRkZjM3ODA1NDEzYzhkY2JkMTkzODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmNDA2ZTAzM2I0ODVjNzA1MTI2OTI1ODgzNmNmNDY5ZTcxNWRhMGJlMWUyYmM5NDc0ODAxNzA4NDU2MjdlNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5MzJjMWZkZjhkYmI2NDQ2NWQ4NGNhYTYxZmY4ZmMxMzMzNWU3NTJlYzI0YWJlOWMyZWYwZjE4Yzg3MDEyZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjY2MTdkM2YyNTBkZDVhNjljM2E0Mzg2MGE0YzlkNzJkZDdmZjNkZGJjNDc4NWQ3NzFlNDFkOWI3ZTk4ZTFmOGMifQ"
+        },
+        {
+          "resource": "repo://tools/verify/check_manifest.py#L15-L76",
+          "version": "repo-lines-v1:sha256:12867172aa5ad69a920f985749cf6b98288df479da1f7ec3643a3fb799b53a1b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNjNWI5NDg0N2MxMDUzYTZmMGRkYjIwMDc2N2ZhMDA2NDJhZWRlMTRmMWUwZjBhNDIyZjJmYWM4NGM2ZDI2ZjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZDU3NjdmNzc0MmI4YzFkNjlkOGVhYjIzNGZjMDk5MjkyYTczNTU0MGM5MzYzZmNiNDYxYTQ2M2FjZjY0NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJiMGEwNDM1YTdhNGQ3NTRmNmNmZGIyN2EwYzA2NDQ0YjY1MmI2NmE2Njk1YWY5MWQ3YjkzZTZjNDUwZjE2MDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZjdmN2FhMTYzMDU2N2MxYjVlNjY0NGUyMWNiZWM4M2E0MzkzM2RjNWIwZGEwZDkwY2Q1M2JhNDhlOTEwZDIifQ"
+        },
+        {
+          "resource": "repo://tools/verify/verify_go.sh#L29-L80",
+          "version": "repo-lines-v1:sha256:27cc7245e031bc9ffb5fdd07fc377fd31fde9ee34fb0568d5a636943b5a621b8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNmZjY2MTgzY2UzYzMwNDlkZWM0NTM2Mjg5Y2Y2MTgyNGJjMzJlOTM1NTNjZDcyOGE5YWYyY2Q3YTJiZWQ3ZjUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxODMzYTIwM2VhMjFmZjNlNWNhZjg3NWFmODI4N2Y4ZDc3ZTVhZmY0YzJhOTFjNzBjNTc4ZTA0OGRiNzIzZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5ZWVmZjg1MzJlN2I2MDg2N2JjMTY2YTBlZmQ3MTliNWVkZWYxMzhmMmVhYTczNjg1NmJmYjJjMGU5NTU5N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmYTMyZmFiZTgwZDA1ZmZiZmY0YzEwM2Y2OTdkZWExZDNhYWU4ZGFjNDc5YWEwMzM4ZmFjZjYxMTdhMjcwMmIifQ"
+        },
+        {
+          "resource": "repo://tools/verify/verify_java.sh#L13-L68",
+          "version": "repo-lines-v1:sha256:409090db75a1893aff49f60cf62e8b828dd94cb8ef7227133a5d0015811d1a34:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5YThjYmU3OGQ5ZGU4YTMxMWU3NTFlOGRhODNiODJmMmVkZjMxNGNkYjdiOTIzZDc2MWE4ZjcyYWE2MDJiYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxODMzYTIwM2VhMjFmZjNlNWNhZjg3NWFmODI4N2Y4ZDc3ZTVhZmY0YzJhOTFjNzBjNTc4ZTA0OGRiNzIzZjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4MjFjMDZjMjU2ZGRhNWQxNWFkZDc2YzBmZTc0ZTg1NGMzYWNmOWI5ZDQxYzNmNDU0MWI4N2M5N2EzNDJkNDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVmYTMyZmFiZTgwZDA1ZmZiZmY0YzEwM2Y2OTdkZWExZDNhYWU4ZGFjNDc5YWEwMzM4ZmFjZjYxMTdhMjcwMmIifQ"
+        },
+        {
+          "resource": "repo://tools/verify/verify_python.sh#L23-L75",
+          "version": "repo-lines-v1:sha256:e593cbb76cf1dac879a3df5b2201eb525ce16d08f5bb3da38ef3a35231311cf7:eyJzZWxlY3RlZExpbmVDb3VudCI6NTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5YThjYmU3OGQ5ZGU4YTMxMWU3NTFlOGRhODNiODJmMmVkZjMxNGNkYjdiOTIzZDc2MWE4ZjcyYWE2MDJiYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVmYTMyZmFiZTgwZDA1ZmZiZmY0YzEwM2Y2OTdkZWExZDNhYWU4ZGFjNDc5YWEwMzM4ZmFjZjYxMTdhMjcwMmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmMWEwZWIyMjNkMjI0ZDhlNTZiNjgyOGYwMWU0OTZlNzllYTAxNTlkMzZkYzYwNmE0MzYzMzg5OTllY2U2ZjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3607fbde6ac64a6d9fb6ca7b5731d643",
+      "statement": "architecture guard 会拒绝 workspace lifecycle API、旧的 domain read API、禁用的 `umodelassistant` surface、CLI domain read 命令以及业务模块直接导入 provider implementation packages；项目通过 `make guard` 执行该检查。",
+      "evidence": [
+        {
+          "resource": "repo://tools/guards/architecture_guard.py#L21-L71",
+          "version": "repo-lines-v1:sha256:1e7b3ce16c1adcb247bcb11856dc84d429fd9c1cf92a2ceacf0bb478e3efb08b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYwN2Y0MDUyZDQ5OGUwMWJkMzJiOWE4Y2Q5MzA1ZGQ3M2IwZDgxYzRjMGVjOTc0NzJkYjAxODk3OGE3MzYwNmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5MDc2NjE2OGFhYjk4MmQ0MDkwZmMwOTM2YTY0MzliZDAzMjM1MjkzYmUwMTNhZjhiYjM1MGJiMGExOGQwNGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQyYjUwNmJjNDYwZWQ0OWYwZDFlZDk1ZGU3MWRjMmNmMDA0NjY5MGYyY2EyZmRjYTM3ZmM2YWY2OTlmMmMwYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZjdmN2FhMTYzMDU2N2MxYjVlNjY0NGUyMWNiZWM4M2E0MzkzM2RjNWIwZGEwZDkwY2Q1M2JhNDhlOTEwZDIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T03:05:58.506Z"
+  }
+}

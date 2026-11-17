@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d1b7b60f330d430efa8cdb254941151b20b8c0c6bbaac5ba7a30a7bba529babd",
+  "claims": [
+    {
+      "id": "claim_3a2cde930b4642048f0999732eedec82",
+      "statement": "bootstrap.NewAppWithGraphStore wires workspace metadata, graph provider, memory search, UModel, entitystore, sampledata, query, and agent gateway so sample imports and public mutation APIs share the same UModel, graph-store, and search-indexing services.",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/app.go#L77-L123",
+          "version": "repo-lines-v1:sha256:29e20a34a8b2d88ad73a52faac1c62147775a9862e75e18826df46c2cd945227:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyYTM0Yjg5NTk2ODFjMGIxNTIwNmEyNWJlMDI1NjQzN2Q5ODk3ODQwMmM4ZTc5ZWZlZjdkYjNjZWEzNjViMzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlYWRhNjA4ZmQxYTdhZWQzMmM5ODBjOTc1NTU1OGM3ODNhZDRiODQ1NzAxNGM1YzNkNzQzYWZkMzBkNmZiNjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlmMTI5NGExMGE2ODk1NjNhMzI2MTExYTg1NDZhMDIxNDFhNGI1ODA0OWQ4MWI3MjhjZjcyNThkNjY4MGViZmEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f40ba41f928a40bb94beec557be991b3",
+      "statement": "The HTTP API dispatches UModel import, validation, element put/delete, entity and relation write/expire, and sample import actions to the corresponding services after path parsing and JSON decoding rather than implementing persistence in handlers.",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/app.go#L436-L578",
+          "version": "repo-lines-v1:sha256:94f7146376f45c0c6ad694d8cbef0548a64fe990356135b66af0560adfd57f11:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJmZGI1NDY2MmU4NTU3MzRmZDAzZGQ4YWYwYjkzMWRhZTkzMWQ2NTlhYWUwZDAzZTk4MWMyNGVhNmY5MWVkN2M0IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJkYjljOWJhOTgxZTg2OTAzMmVmMWEzYThhNDFkMGUwNTM3NDM5MGZhMzVkYjA1MWEwNDg3YTEyOWMwMDIxY2M0IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiYTQwMTM5Yzg0MDIyNGEwYTQ5Y2M0MGE0YzM2M2Y2OWI2ZDAwNDIyOGM5ZDlhMGI0ODkzMjA5YjdmNGM0MjY3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1YWNmZGQ1MWVjMDdkYTk2MzU3YWE3YTEwYzg3NWRiZTVmMTAyYjU1MDNjYTZhOTI0ZjFhZWNkMTc0NWM3YzRhIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_14b27160e4e24d87a0f490caf9f8ee4d",
+      "statement": "LoadQuickStart normalizes empty options to the default demo workspace and multi-domain quickstart sample, creates the workspace with a quickstart label only when it is missing, ignores create conflicts, and then delegates to sampledata.Import.",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/quickstart.go#L12-L60",
+          "version": "repo-lines-v1:sha256:6a48998e7920d128172e6d41334080f951bb95ecafab2c411b2ed6878fad9895:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI3ZDI2ZGFkOGNmOGJlYjQ4OGYyN2Y1ODg2MTY5ODQ1ZmI1MWU5OTFlODVhZWJhMmJiODllY2E2NmVlMDY5M2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM0NGY3MzhjYTcxMzc2MzhjYzE2MjE2MmI1YmU2NDdkYjM0ODgzNzExN2RlNDIwZTFiNzQzMDlmNzI5MjAyZDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWM2MThjNTYwNmFjMmRlZDg4NTk5YmMyZWU2ZmZlNWJhN2RhNTZiODNhMTJhNjcxOGI1MzA1NWQ3ZjcwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e324fb8fccb649fda6e20cee8a76e7c3",
+      "statement": "sampledata.Service resolves built-in sample definitions from repository paths, imports schema through UModel.ImportTrusted, then writes entities and relations with sample-versioned idempotency keys, and converts any item-level entity or relation failures into validation errors for the overall sample import.",
+      "evidence": [
+        {
+          "resource": "repo://internal/sampledata/service.go#L109-L172",
+          "version": "repo-lines-v1:sha256:ab3cd49efa9318f2246b275904f1263b6662ea3f926dc664c58361c4a85a867d:eyJzZWxlY3RlZExpbmVDb3VudCI6NjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjNGY3ZjE5ZmU4ZmI5NDIxMjM4MWYxNTczZjkwMDA5M2ZlMTVjYzA1ZjRhNWYwOWFjYTZkYzI3OWRkNzdkYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGMwN2M3OTlmN2NhZjBjMzY1NmJlZGQyYWRiMTdmM2IyYzYxYTFjNzBiOTgxODA5MjBiMTlkNTRhNzg3ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmODg0ODU2ZmNiMjBkMDI2MjU3ZmVkMGRjODEwNWNhOGMxNWU0MTVjMGNhNjU0YmRhYTBhNDNiNDMxMmE5ZTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmNTQ5Y2ZlZDQwZjFlODY0NmRjOWVjNjZkZGQyNDgxMDgzYWU2Mzk2ZDY4NjJkNzE3YjBjNmE4ZDE2ZmNjMWMifQ"
+        },
+        {
+          "resource": "repo://internal/sampledata/service.go#L210-L220",
+          "version": "repo-lines-v1:sha256:1cd5b64342d6326a936a04149109b2ae5b87f6d80d0840231727441acf370161:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiNGM1N2UxNzEwOTdkMDM5ZTA5MDAzYTRhYjU2ZDBiNzgwODU1MTE2MjI5MTliODYxNjM1Y2RhMDNmMTE1NjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwOTUwYmVmZDBmNTYyNzlkMzE4NWNkMGExODljZTg3MTVmMGIxYjc5YWEyYzBmMmUwZTU2YjQyYzNjZGQ0ZTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://internal/sampledata/service.go#L30-L52",
+          "version": "repo-lines-v1:sha256:38e523705f9bf9d110093a37d8e0db4b2b9ae1eeeff3023f917ca97fbac560ca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNGVkMjQ5NTUwNWY1ZGUzZTFjNzI3Mzc5ZGNmNDJmMmEzYWM0MWZhNDVlMzM1OGEwZDI1Mjg3MTg2YjU3ZDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwMDdjYTJmODM1YTQ2MjVhNTM0YTcwZjk1ZmFmMjUyOGI1Y2EzMTNmMTY5YTFiOTdmZmJiMTFkMGYzY2NiNDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ2YjAwZTkyZWU2YzgxNTgzYjNkNTA0ODIyYjMyMDdlOTUyYTQxMWE5ZjJlMzgwNjYzMzM0Yjk4MGExMGJkMDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c69adb1d56784ccb8c2485c32c8dffd3",
+      "statement": "Public UModel.Import confines caller-supplied paths to the configured import root and rechecks each discovered file after symlink resolution, while ImportTrusted bypasses this confinement for already-trusted bundled sample paths and is not intended for user input.",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/import.go#L130-L175",
+          "version": "repo-lines-v1:sha256:83c8516a1acae4cc4861602b9df092621806ec3e3b217cfdc4a7fb4a89f0d172:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc4NzFmZDM5MzViMDMzYjJiOTRlNmZmN2EyZTZhMTY0N2IwM2I1ODk5MGMwYWI0NTFmOTFjM2M4YmJmNTM4MDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0MDBmNjc5NTAxMzUzNjFkZTkyMzBjODJmZDJjZTBlZjA1MjJhMjEwMjE5YjAyYmFjNDJiNDA3M2RiNWQ2MmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjZmRlYTFiMzAwYTQ1YzQyZGIyNTIxZWM4MzJhOTI4N2UwMmRhNGVkYmRiOWMyNjUzODQ2NWMwNTA4MGJkNjIifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/import.go#L17-L45",
+          "version": "repo-lines-v1:sha256:913b0dd9b194f56b12246ae31fed0e597d432b6b782f1c819fd96d1a07281213:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0MjYzODBlZTY2YzJhYzllODdmNzdiODg4YjYyZWY3YzdhNGJkZTBhOTZjMWM2YTdjYWQ3MDU4MjZkNDBiOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVmYjY4ZTViMmJiOGRlNjEzZjUwNzBmMjJhZTg0M2U1M2FhOTk3YjVhYTUzZThjMjFlNGM2MDkxZjQxMTU2MTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAyNjA0MmFhNjc1ZWI4Mjg5YzIxMGFlMDNmM2NjYTEzODgxNjg0YWJhYWU4MjhmNmJkOWFiZmIyNDc2OTk4MjIifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/import.go#L61-L80",
+          "version": "repo-lines-v1:sha256:79869ab08fcb32ef0a1d51ccf11bfad92b3a146d905ac3f7cf81fc075c17960d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZGE1ZjA5ZTY0OGZkY2Y0OWU2Yzk1NDU3OWEzNTJiYjViYzI4YWMzZjZjOGM4ZTQzM2I3ZWJmODA5ZTNkZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNzAwYWE1ZDBiNmYwY2RjMzQxZGE2MDU1YTI0ZmUyYzQxZWQ0Yjg5Y2Q3MTI2ODIwNjk4NjU0N2MyMDkzZTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNhOGQyMTBlM2ZhMzJlNTY1YWFmN2Q3OGYzNDQ1OWJiNDBiN2ZjNjViNWQwMTBlMTM0N2MwY2RmYTQxYmEyODEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBkOWRiMjAyMjAyNmIwMzE1ZmFiNGM4ZDA4OTU3ZGY1YWY2ZDVmZTk5MzdjMDgzNGYyYTZkMzA0MGFhNWRlMjEifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/service.go#L58-L64",
+          "version": "repo-lines-v1:sha256:6ecd61520f7e78e0585093a4fb0194afe0253d31ab12a4959b63738f430d475c:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDdmOTY0ZDg3YjMxNzY0ZmFiNDM0ZTgxZGZlZWNmM2VlMTlkN2Q3NTQ2NDg2ZDA2ZWY5ZjkwNTFiYzliYTAzNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjYwN2M4ZWExYmRkY2ZhMDY1ODk5YTJmZmVkM2M2OGQ1YWVhOWY0MzdkMjJiZDcyOGVjMjc2ZWZlMmUwMjJlZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTEzYTU2ODAzZjgzMjViZGNhZmIzMmI2YmJkNTAzMzNjYjkxNzRmY2ZjZDNlOGMwMWEyNzQ3ODFkMmYxM2E2MyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_d2cd54d820034d679f7f27f056c05970",
+      "statement": "The UModel importer accepts YAML, YML, or JSON files or directories, skips configured generated or sample-data directories during traversal, counts non-import files as skipped, and parses elements from kind, metadata name/domain, schema version, and spec, with domain inference from dotted names.",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/import.go#L190-L251",
+          "version": "repo-lines-v1:sha256:c09e0faac2b274f69371c7ea7612d864c12b05bcdf2b63a296ba4e28c863b97e:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMxNGU1MGE3ZmE2YWU4NGRjZDhiZjg3ZjdkYTgyYWYyYzM2NjgyMDI1ZjE4Y2I1YWQzNzkwMWI4ZThlNDdlZTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFhNzM3ZDA1NDIzMjBhY2E3NjQ3MGM5OTMwOGY4ZWFlMmMyMGZiNjBiZjc5OGQ3N2RlODI2MjRlOGIxOGMxZGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVlOTVjYjM3ZjMyMjBhYTE1NDhlNjU3YzdjZWRkMmY4YzI2NjkwNDI1NGI1NjlmNTUwMDBiMjA4MGI0MjY0NDIifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/import.go#L253-L302",
+          "version": "repo-lines-v1:sha256:0e7b21095a0bcf3d6b4ae0711610465d308f1bcb0a804ec54a48913bf5ec4e94:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQzOGY3ZTQ5MTg1MzdmYzlhMTE0YjdlYWY0ZmQwMzYwZjY4OGFhYTQ3NTY3Mjg5MjM1ZTY3NzkwZWQzNTMxMjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQyOTM3M2ZmZDk0ZmEwN2ZmZTE2NjliZTgwNTU0ZDkyNmUxOGZiNjkxNDNhNTg4NTY3NzM5NWIyMWFkNTQwZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdlNzUyZGUwN2I0NTg2YWJmMWNkNTExOWYwZTgwYjc4OTdkOTQ1ZTE2MDA0YzM0MTdlZDViOTJhYTY0ZjYwZGMifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/import.go#L355-L360",
+          "version": "repo-lines-v1:sha256:cd3dbb0625b3dc768a8e3ff16d9357b4620a459dc1d17fffaeeb082fd6bc35c0:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiODhmMWRiZmUwNjU5NGVjYzkwMzIxZjMxMTFlNzljN2JkYjBhN2I1ZTdjYjhhMTQzMGI1YzA3ZTA1NzViMTk2OCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDA1NTcwZjhkOTIwODUwNmVkNjUwMDUyZDY3ZGJlNjdmZGE2ZGUyZTk0MTI4YmIyNTc5M2IyZTg3NjNkN2I0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fa1c1e80dea141d985607b92d7afb71a",
+      "statement": "UModel PutElements requires a non-empty workspace, validates all elements before persistence, rejects validation errors without graph writes, writes valid elements to graph storage, updates the schema index, returns validator warnings, and treats search indexing failures as non-fatal WriteResult warnings.",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/service.go#L88-L161",
+          "version": "repo-lines-v1:sha256:61fab4c00d95275e0f0b53f370f4b6a34de1d07da28b464f530a9fbba1f60244:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhNjdmZGRiODhlNTM2NWJjMzRiOWI5NzE4MzRlYmY0MzljYTI5NzAwMzMyODEyMTc2MDc1NWM1OTRhMGUzNjEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGMwN2M3OTlmN2NhZjBjMzY1NmJlZGQyYWRiMTdmM2IyYzYxYTFjNzBiOTgxODA5MjBiMTlkNTRhNzg3ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmYzRkNzJmYWNkMmE2NmY2YmRkOTA5Njk0ZWI2OTA1OGEyZmNhYzVkNzRlNzRkNjM2NjVhNDBlOGU5YmVjZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMWQzYjdhNWVmYWIwNWI5NzVhMWVhNGNlZTE5ZTAzZjg4YTYyMjg2ZTE2M2ZlNjJiOGJmYWRkZjU4NDgzN2UifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8aedec7b917e40dd85884b0fd6d9efd9",
+      "statement": "The memory graph store stores UModel elements by workspace-local UModelElementKey, so repeated imports of the same element overwrite the same key and tests verify duplicate import leaves a single snapshot element.",
+      "evidence": [
+        {
+          "resource": "repo://internal/graphstore/memory.go#L44-L60",
+          "version": "repo-lines-v1:sha256:77f87ce74d4b14bb48d774ae57971f7dab245cd647f38575bc4d9547d7708637:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3YzI4N2U0ZTlhZTExOTc4MGZjYjRiNjlmYzIxY2QzN2I1MDgzN2Q4ZDJiNjc3YTdhMjU2MWFkNTc4M2U0ZGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM0OTM3YzRlNzEwOTMxMTYzZmJkNTRhODUyZGY3YzBiMjA1MTM1YTY2YmEzODU2ZmIzYjA4MTcxMTZhYjg0ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjQ5NTg2MTM1YWIwODMzYzg5NWUwYmJjZjVhOWU5N2Y4MjA5Y2FhN2M5MzNjMGRkZDE1OTJhNmJiZTNkN2JiMGEifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/import_test.go#L117-L148",
+          "version": "repo-lines-v1:sha256:ce00a4ec04032723de7cceaf53dc9b1c5a221dd692069f493151389a00484103:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmOTdkNjQyMGNhNTYyMmE0ZDgwNmM5ZWEyNWQzZWQ1Y2Q4ZjVhYmVkZjlkZDE5OGJkZjBjYTBlMzI2YWM5NzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjZmY2NzY0MWRhNjQ0ZWFkYjUwZjcxYmVmODk2YWVmMDk4NGIzOGUzNmNlNzQ5MjQzZDcwNmUxYTAwOGNjY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_aa6c42abad314310891c35ffa5558a35",
+      "statement": "Entitystore WriteEntities and WriteRelations set the path workspace on the batch, consult separate workspace-scoped idempotency caches before validation, and store cloned WriteResult values after a completed write so cache hits do not repeat validation, graph writes, or search side effects.",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go#L107-L150",
+          "version": "repo-lines-v1:sha256:265253cce763397c6f44bb95ff90f91f92e23c39f2e7ab91e69ea81a15af9bd6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJmNThjNTdlODAzNWJmZTA0NjAyMDdjODk3YTBhOTUwYjVhZDUxMGQ2NGNmZDk4Y2YwZjgyYjA3NjBkYmE0Y2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGMwN2M3OTlmN2NhZjBjMzY1NmJlZGQyYWRiMTdmM2IyYzYxYTFjNzBiOTgxODA5MjBiMTlkNTRhNzg3ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYWJmMWNhY2M0NGZlMGJhODIzY2RhOTEzOGQwNjUzZDZlZGFlYWRmODYwODhkZmZkMzJjMWIxNDVhM2NmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MWM4ZDIyNGFiNmE0NTc5ZmZiODc2NjQwZjc0NTgxZTQxZGZlZWY5MjVlMzgzNGM3OGY2M2JmZDJhZTI2NmQifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L211-L250",
+          "version": "repo-lines-v1:sha256:198892dc56c84f6713db8e21b3619d05b0d11d1bc23e48795c5585225c5c7d49:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ3OTgxMGFkMTRjMTRjZmU4ZTk4OTRhY2Y0MGZkMjk2NTZmYjViYjc3MDlhYTZlMjcxOTNhODA3ZDQ0ZDI0N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxNWYzNDdkMTJiNTkwNTk2ZDhiZDA0MzVkMWEyNDNmM2U0ZDFmZDFiMDY0ZjEyODI5MDI5ODVjYjhkMTY2MDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAyZDM5NmUzOGRlM2U2ZDM2OWQ4NWY0YWZkOTRkM2QyOTI0ODQ0M2M3MDc3ZjU3ZjRiYzE1YjE3NTcxZjQyMjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdmYzI4ZTE2ZGJhZWUyMTFkMjA2Y2U2YTMzMzdjYzI5ODg5NjM2NjlmNzljYTdkMjNhYmM2NDA0YjY1ZGNkYTQifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L456-L463",
+          "version": "repo-lines-v1:sha256:129e1ff75b12550e5f886b301ff3800e51841cd64e06b273c1fefccc5318cf41:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGFlODRjZDcwZGRmZDc2ZDk3MzFmN2IyMDk1MDgyOTQ2YTZkNmYwZjIyMTIwMWUxMzg3M2Y3ZWVjZThmMWFhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDg5NTE4MTgzOTY4OGY2Nzk1NWY2ZWNkNjQxMTkwZDFhODRmNTJiNTE2MGIzYzUwNjk1MGM3M2FlMWExZmI3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWU3MDlhM2RhMmM4MDhjZThmYTY1NzUyOWY4NzY0Y2FhMjBiOGM4N2FkMzI0N2M5Y2Y5ZmE4ZTQwN2U2MjdiYiJ9"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L60-L104",
+          "version": "repo-lines-v1:sha256:efc3e6db97664a46ef4f476b365c6a4e06fb92931486dca7b696c0b20c9143db:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhjZWQ4NTZiYTg3ZWY1OTIyYTg4Yjg5MGFiMGZiNGUxMTY1MDczZTZlMzVjZmIwOTE2ZmU3YTAyOTg2ZjdkM2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGMwN2M3OTlmN2NhZjBjMzY1NmJlZGQyYWRiMTdmM2IyYzYxYTFjNzBiOTgxODA5MjBiMTlkNTRhNzg3ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4NzcwYjc5YjdjMjAzNmEyNWQxMjFjODcyNDc2YzVlNzMwMTBhYzdiNmM4ZDYwNTdiMzY0ZTBhNjliNzg4YWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMmMyNDc4NTJiY2FmMjNjNzU2NjYxYTI5NDYwZWFhOTMyZTBiNWI0ODc0OTBlNTRjMWY4OWY0MDFhMjcxMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_30fdd76f73104fd9b84596bab39a26be",
+      "statement": "Entity and relation payload validation is delegated to UModel service resolver methods that enforce CMS 2.0 required fields, 128-bit lowercase hex entity IDs, and write methods limited to Create, Update, Expire, or Delete.",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/service.go#L261-L310",
+          "version": "repo-lines-v1:sha256:a355fb5ba2ed2fd8f817fea6127bcd7d38fd2247885305ecea53868eee17168b:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI4YjMzMDFjMDlkMGE1NjYzNDMyMGFlYjE2ZmQzMDRlNzViMTAzM2NmMWY2MDViMGUyMzEzNGY0MjYzNTE3OGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkMjAwNGYyYWRlN2MyNTJiYzkwYTVjYjA0YmYzZTY0ZWVjOTU5ODhiYmNjNWI2ODkzMWNmNjliZmEzZjVkZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUwYWMwMzU4OGQwMzAxMDY5OWRhYmZiMmY4NjY5MTlmMDU5ZDI1NTJkNDA5NDc2OGZiYWQzOGM1NTk1MDc1M2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyNDFjZjk3OTZhYTJmZmE0YmNjNTNhMzNjNzFjMzE5YzExYTA2YjNiY2ZmMzg4NWJjZWRhOTc0ZDc3MmI4YTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f2fc13affefc4c5bab05fe12039ebd8b",
+      "statement": "For entity and relation batch writes, validation failures abort immediately with CodeValidationFailed when PartialSuccess is false, but become failed item results while valid items continue to graph storage when PartialSuccess is true.",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go#L113-L135",
+          "version": "repo-lines-v1:sha256:2175ef06b316473eda1a77341d5f9cf091d1f674b2ec4f547ea472da5e6af9b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmZkNTM0ZjNmZWQwNGQ3OTc2MDc2NzIwOWQ0MDdmYmIwNjI0MjdlZTNjZjU2MjdmN2YwMWI1ODRjYjY4YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMzRmYTdiZmZhMjMzNjc4NWY2NTA5N2UyZTg2NmYwZWMyZTU2ZjZhOGRjOGM3MTk1MWJkYzc2MmFjZmViMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0YjhlNjY3NTRmZDVmOWJiMDgyOGJlNDMwZjFmMDRhMjY2M2JkZDFjMjRjNjlkYjU3MTg0MjJlMTQyMDY0Y2MifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L66-L88",
+          "version": "repo-lines-v1:sha256:6adc9d696c004abb5c0e964112c6814e5d18da7c328b3390684002b2f73bd1c5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjllYmZkNTM0ZjNmZWQwNGQ3OTc2MDc2NzIwOWQ0MDdmYmIwNjI0MjdlZTNjZjU2MjdmN2YwMWI1ODRjYjY4YzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmMzRmYTdiZmZhMjMzNjc4NWY2NTA5N2UyZTg2NmYwZWMyZTU2ZjZhOGRjOGM3MTk1MWJkYzc2MmFjZmViMDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZiOGU2MjY0MmIzODQzNDgxMWQxNmJmYmRiNGUxZmM5MmVmMmUwYTRmMGE2NDVmZTc2MGM1N2UwN2FiOTk0ODYifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go#L244-L267",
+          "version": "repo-lines-v1:sha256:ebb2df9f0baa4cba8c79e4baec32a3db53f8b76f78448fd335cef45bfc92bf51:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiNTBhZjViZTlmN2MwYzg4ZTM1Y2I4YTE1MGRjOWIyZTRhZDdhZDg2MTcxYzViOTVlYTdiMTUyZmYwNGY4MjMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUwYmNkODZlMjMxNTJiMGZjYjNkOWZkY2E5YjhhYWVlMzhmMDkxM2ViZGFmODk5ZWUxZDc1NGNlMTgxMTkxMDkifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go#L50-L75",
+          "version": "repo-lines-v1:sha256:3e094310fd2afa248aebf15c243ce624873f943ffb7d4522f4e08bf70953fad5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmMTg4MDgzZDM0ZTMyODNhN2U3NjkxYTg4NjZlYTNiOTU2ZmZkYWI5NDQ5YzhjZmFhOTQ0NTVhYTQ1ZjhiOTQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1YzRkNjJlOGIwNTkwODBkYzk3NmNjMzE4MDQxMTVkNzg2NGFlY2M3NDM5YTBmZDliMmM2NzBhYWI3ODlmN2QifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_620dac72779c47aaa4eb1290aeeeb386",
+      "statement": "Entitystore treats graph-store method errors as hard errors without recording idempotency, while graph-store item-level failures are merged into WriteResult and produce CodePartialFailed when the request did not allow partial success.",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go#L137-L150",
+          "version": "repo-lines-v1:sha256:ef780de41dc5fb3f45acd315019acfc9782620b4998c2246d887d2105f9f66a1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMjQwYmMzZWE3ODRkZmMyYTRkZWY3MDEzYWI4YzE2MWM1Yzg2MDQ3OWVmMTczMzg0NjJiN2M1MTQyMTc2MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGMwN2M3OTlmN2NhZjBjMzY1NmJlZGQyYWRiMTdmM2IyYzYxYTFjNzBiOTgxODA5MjBiMTlkNTRhNzg3ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImEyYTFkMmNjOTkwYzhjMmUzNjhmMmNjZDRmZGM2OGVmNGMwMGQ1NzlkNWRkNGVhZWM0ZWYwYTMzZmM0NWQxM2EiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ2MWM4ZDIyNGFiNmE0NTc5ZmZiODc2NjQwZjc0NTgxZTQxZGZlZWY5MjVlMzgzNGM3OGY2M2JmZDJhZTI2NmQifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L472-L474",
+          "version": "repo-lines-v1:sha256:2d567a579c381a1509df49dcf03cdcae052558bf8a717ab2ff40479ffbf68e38:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMGJlNDdhOWUxODBiNWVhMDQ1OTVmYjdhMzE2N2RlYWQ3YTAyMzU4ZTA2YTBjZTUwZTkxYjg3YjA1NjQwNWMyMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmI3NDNiYWM5OGJjODYwNjUwMjU0NDY0YTlmNzNkMTAzNDFkODkyMzRkYjZiNDg0YzhkZTNmNGM5NzY4OWZiNiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L90-L104",
+          "version": "repo-lines-v1:sha256:cc96df98cc5ec332b89cf9f79651a083d2a948c65b92aa169e202945f8d3e422:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMjQwYmMzZWE3ODRkZmMyYTRkZWY3MDEzYWI4YzE2MWM1Yzg2MDQ3OWVmMTczMzg0NjJiN2M1MTQyMTc2MTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlOGMwN2M3OTlmN2NhZjBjMzY1NmJlZGQyYWRiMTdmM2IyYzYxYTFjNzBiOTgxODA5MjBiMTlkNTRhNzg3ZTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFjNTZiNWViOTIyMzk4OGQ2ZmVmM2U1MmQxOWI2N2M2M2FjMGM5OTY5ZjliYTgzMDY0Njc4YjdhNTQyYWM0ZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZhMmMyNDc4NTJiY2FmMjNjNzU2NjYxYTI5NDYwZWFhOTMyZTBiNWI0ODc0OTBlNTRjMWY4OWY0MDFhMjcxMGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f9859269b6e489c90cea5fd16398b61",
+      "statement": "The memory graph store lifecycle semantics make Create fail on existing non-deleted records, make Delete and Expire require an existing record and mark cloned records deleted, preserve first observed time on updates, and hide deleted records from current queries while allowing expired records in historical ranges and always filtering Delete-method records.",
+      "evidence": [
+        {
+          "resource": "repo://internal/graphstore/memory.go#L108-L157",
+          "version": "repo-lines-v1:sha256:07840f8b1f1799041c9c56aef3ec52a58c9d96b02ba682848f482ac82952d85c:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ1YTViZTc3MGE4NjZmNGEyNWJlMzlkNjMyMmJlMDlkODI3OGVlMzNkYTMyYzBjMDA3ZDEwOWEwNjkwMmM2NDQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRlNjc3MGE2ZGJmNjhmOTM5MTg5YzQ2NmI4MDg1NDVhZWRlZWY2OGIwMzBjODgyNGQ4YjgyYzIwMTcxNTc1ZDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNjZGJmZDgwMTJkMDgxN2Y1ZmZjZTNiMzA0NzZjZTUwZjY2NzA0YjAwNGE2ZjNlY2FkYTY4ZWZmNmEwZDg2YWYifQ"
+        },
+        {
+          "resource": "repo://internal/graphstore/memory.go#L159-L208",
+          "version": "repo-lines-v1:sha256:b7ff0ddad606ddb20385f528596b3107207dc07e851b8566e65e958120c3dc66:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU0YzlkMjc1NjQ5MjBiOGVlZTUyZTE4M2RkNjA5ODQxZjdiNGE0YzA2ZDE5ZWU5ZDFlM2YxNDk5ZmQ0MWU5OTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRkYmUwNzQ4ZGRkNDdlYzdhZTIwYzU5NWU1NjFiYmU3NjAwMWFiYTZhY2Y2ODUwMGY2YWZiZTE5ZjA1ZDk0MzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNmN2RjMDFjZjFiNmVlZDVmMDAzMjVjYWU1ZmRhNGU3MzFlZTJkYmExYzg3YzIzMGU3MWJjMGY2ZTUyYTdiYjYifQ"
+        },
+        {
+          "resource": "repo://internal/graphstore/memory.go#L352-L400",
+          "version": "repo-lines-v1:sha256:e356696230aedb9c56257c890a8620b10d0868e55d7c482bb2be670b5f41d754:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5NWU2MWUxMWI4ZjBkMzA3OGZkOWZjZTA4NTc5NGE1MDZjOTE2ZDU2YWI2M2U2ZDM1YWI0MDNiM2QyNDM3MDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViNjg5MWJhOTE0ZTQ0NWUzZjFiZGIxNjQ1NDAwMmE1YTc4ZGY3NDY5MjdmYzkyY2Q0MTEwZTI1NDM0MjYwZDUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjljYTBmYzk5ZDljMjA3ZDkyNWIzOGM2YzllODAxNDlkMjA0YzA4ZGZlZmE2MGJjYTU4OWI3ODE0NjM0ODhlZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRmMTgwODZmNWFmYzM1MDcxMGEzNzUzYmQ1NzZmZmRmNzNhMDVmOTlmMDdkZWVkMjEwODg0MmNlZjIwZjVmOGUifQ"
+        },
+        {
+          "resource": "repo://internal/graphstore/memory.go#L407-L420",
+          "version": "repo-lines-v1:sha256:9940ff57f3caf576de57cfb8e295dcfae02e520ce782f91bf3e79b80691d30c3:eyJzZWxlY3RlZExpbmVDb3VudCI6MTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY1NTFkOWYyZWUzMjk5Mjc4MjI5MmJkMGZkNTU3ZjA0YzgwOWY1NDFkMjVkYjg0ZTdiYmVjZmM1NWZjYzBkNjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllNzk3MjE2OTEzY2Y5NWRmYzdlMzA5NTM2NGE3ZDNlNWZmYzBlYWQ5ZDFmMzhlZjRiZjQ2Yjk4NTAzNzk1OTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1MDZkZGVhZTE4YjBmMDRmMjQzYjhjMmU3ZDczYzlhN2EzZTQwY2I0ODBhOTRjZTdhYWNlMDIyYTM0NDEyMzMifQ"
+        },
+        {
+          "resource": "repo://internal/graphstore/memory.go#L446-L473",
+          "version": "repo-lines-v1:sha256:0fce4a0635e7adbebb25d6398219cdc0d3d4c179af0769af72fa796796296997:eyJzZWxlY3RlZExpbmVDb3VudCI6MjgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4OWU3MmVmODQ5M2QzZWMxOGQyZDBhNTUyMGU0N2RiNjI5OGU4ZGIzODhmOTA4NTUwZmQxYWYzZDA3NTBmNWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkNDg4MmZjZGEyYzljYWUzZTM1MDA0NTU0MDc2OWE0MjU3ZjliNjE3NWQwYjEwYWQ0NmQxOWFiYzgyYWJhZGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI5YjAyNDFkYzVmYzVjZjMxMGJhZDM4ZjJjMmM1ZDU1N2Y3NjhhZThlOTc2YWYxZTdiMTc1Y2Y2YTJjN2RlYmEifQ"
+        },
+        {
+          "resource": "repo://tests/e2e/business_flow_test.go#L76-L149",
+          "version": "repo-lines-v1:sha256:2600ef94f1b7796574e51d5e54f5aa06548741c0027b060b939b59f8bd3ef3f4:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgxYmIwZmU0YWIzYjJjNTBjYWY3ZTYzMDUwNjUzN2E1ZjA0YzJhZDZiM2M1NjNkYTFjYWEwYmQwMGU1MGVlYTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkzZDE0YWIwYWE1MWYxMzBmMWU3NmUyMGJhMjBlNGQ3MzdkYjA2MjZlNTY2ZjhiNTBhOGIwYzk0MGExNjk3OTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0NGUyNjdlZGE2OGZkMjhkNjQzODg2NDZkNzRkMDUyYTkzODE2MjFhZjQ2OTFkZGQ2MGMyNGQwOGQ3NDBkMmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIyOTNjZmEzYWQxZDMyZjYyYjAyZDlmZWJkZWM4YzQ5M2Y2MWUxZTNjZjM5NjUwMDM2MWFjMzFmNjMwNjhhZmIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_4c1af5a8e60540ac9cd1ab138920f233",
+      "statement": "Entity search side effects occur only after graph writes: non-delete entity payloads are indexed as entity stable-key documents, Expire or Delete payloads delete those documents, and any search Index or DeleteByDocID error is appended as a search_index warning instead of rolling back persistence.",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go#L271-L310",
+          "version": "repo-lines-v1:sha256:9931a0529583229d092a3ff90bbea0062b7148033af4c4030005c71e9dec5d0f:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjNjdjNDQ3ZGI5OGMyMDYzY2UwYmY5ZWZiODEzNzk1MGNhODBmYTRiMjAyMDllZmYyOTM0NzQ3NWQ3MWZjZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJkNmI2YmQyMTU3NTU1MTYzYWY0NmEwMzU3YTYyODA0NjQ0Nzk2MDVkYWQ0ZGM2ZDlkZjFhZDU1NTA2OTM2ZDkifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L312-L356",
+          "version": "repo-lines-v1:sha256:1303e3459a4a9c436001386f1cdf09845176704009f8afd1656ed6e3a450e4e9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NzQ4ZTBkYTlkMTk2MzdlZmQwODlkNTIxNzUzM2FiNTA1NjU1ODFiMmFlN2Q5ZDE3M2U5YzUxMjQ4ZTY5ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyNDJlMjFiZTc5YjY5M2NkNjE2Nzk4NGExMDI2NjNmODNkOGExOTA4MzAxNzgxMWI5YTA3MjNiZmFkNDQwZWYifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L90-L98",
+          "version": "repo-lines-v1:sha256:bf3b37d02a25c0ccc121b343ca43eef92bb6557bddb33fd71e27be08ac419e1d:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZWMyNDBiYzNlYTc4NGRmYzJhNGRlZjcwMTNhYjhjMTYxYzVjODYwNDc5ZWYxNzMzODQ2MmI3YzUxNDIxNzYxNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYWM1NmI1ZWI5MjIzOTg4ZDZmZWYzZTUyZDE5YjY3YzYzYWMwYzk5NjlmOWJhODMwNjQ2NzhiN2E1NDJhYzRlMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNGVjNmExYjNjM2NhNmNjOGU3MDUxZDhiOTgwNjE0ZGE2NzhjYTMxYTRkZThjNTAwMjkzNTRkZDk0OGIxM2I1ZSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_af73234b2c844c6d9949d3d687036d32",
+      "statement": "UModel delete search side effects are limited to accepted deleted items and delete both umodel document IDs and runbook_set section document IDs where applicable; DeleteByDocID errors are reported as search_index warnings.",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/service.go#L164-L187",
+          "version": "repo-lines-v1:sha256:f7828a3ace4bef199d7da4bfa143944141f17351d4b451536f2213b9b99a7001:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2ZjA3ZWQ2YTQ4OTk5ZmQwZGQ1NjczNmY5M2Y3MDk3Y2ZkYzRlYjg0MGM2MGRmNmUxMWM5N2UyOTcxNTEyMDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYWJmMWNhY2M0NGZlMGJhODIzY2RhOTEzOGQwNjUzZDZlZGFlYWRmODYwODhkZmZkMzJjMWIxNDVhM2NmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNhODBjYmJhNGQ1YTU4NzU1Mzk0ZDI4OGEyODNjMTk1NmE3NDE3MjkyZmEwYzMzNzk3MzAzZTNhZGZlZmY3ZTYifQ"
+        },
+        {
+          "resource": "repo://internal/umodel/service.go#L189-L227",
+          "version": "repo-lines-v1:sha256:1e43db71e89a6aa8188197042908c40e32c719f40eef230abd20cf4e3324fef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0OTE2OWQ1OGQ4ZGIwMjllNjU0ZGMwMDdjY2FjYzJhZTUyNGE2YWFhOWQ0MzU5NmU5NzI4YzBlYThmYTJjMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYWJmMWNhY2M0NGZlMGJhODIzY2RhOTEzOGQwNjUzZDZlZGFlYWRmODYwODhkZmZkMzJjMWIxNDVhM2NmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhNmVhYjkwYTAwOGFmYTJlZTMxMGJmNjBhMmI3MmIxNDM1MmFhODUwMGExMzE0ZWJhYjUzY2VmMWExNTdiODgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_af5dddf0cfd54421a046ff76e79c7fa5",
+      "statement": "ExpireEntities and ExpireRelations parse stable keys into Expire payloads with current last observed time and PartialSuccess graph writes, report malformed keys as validation failed items, and only entity expiration deletes corresponding search documents.",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go#L153-L201",
+          "version": "repo-lines-v1:sha256:04fa1b69f4e0f81bcee3b03f13570b06ab9f9a7aa8b9e4a418d0409c36107f95:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyZGYyOTlmNjA1ZGJlYmUyNzI3YTBhN2M1MWQ0N2Y4OWYzNDQ3MmVjZGE4Mjc2NTZjZWY3NWVkMGM2NzJkZDYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJiN2Y2Y2JiZGI2ZjY5MTU2Y2Y1NWY4MDA5NmU5NTkzOGE1MjEwNDBlODg0ZTMzYjRjOWE5ZDk5MmIwYmU1OGUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYWJmMWNhY2M0NGZlMGJhODIzY2RhOTEzOGQwNjUzZDZlZGFlYWRmODYwODhkZmZkMzJjMWIxNDVhM2NmNDEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAwMDZhOGMxNDVjMjVlMzE3MWRlNWE1Y2M2ZGQ3NTU0OGI2OTY5OTNiZTg5N2ZmMGMxZDg3M2ZkNTFiYTJkOWYifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go#L406-L454",
+          "version": "repo-lines-v1:sha256:aba585a61c2d953aec087a46414a21ce0a1d0571631ec7a31e8536da6b159cd1:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlN2EzOWU4NGQ5Yzg0YjRjNzM3MGE2NGFjNjE3NDM5NjRkMWZhYmMzNTc2NzExZjk1MmI2YjkwNDQ2YmU2NzEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNkZjZjYWMwY2E4OGU4YTdhZTEyOWNkNmUyOGI2OTkwMWM1MjMyYTFiOTJmZGVkMjc3MzQ5MTE3MTg1ZjQyMzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1N2ZiZmFiMTgyYTJiMjkxNzMzZDk1NGZlZTViN2FiMzVmZjA4MjYxZDM4YTExMWNhODYzODQ1MThlZWExOGUifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go#L191-L208",
+          "version": "repo-lines-v1:sha256:5d5350afaa57cdbe542b07104a120460df36f680f17574e141df19c4b33f7fbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYmRkZTkyNGFhYjg4ZjRlYmY4MWI1NmIzOTg1ZTk4OGI3NGI5YTBlNTY1MDEyNTY5N2FmZmQ0ZDA1MTM0ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjYxZTg3NDMzMjljYWVjZjE1NTk4YjY3Y2NlMTAyODYwYmQxZGFiNTc1NDUyYWQ5Y2JhZTRmZTZhMGQ4MzNkZTYifQ"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go#L376-L382",
+          "version": "repo-lines-v1:sha256:f0a0af5bc2dd0158d6fb38fccd900ec4a0eb40692fb353312c7f78f32475c666:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjFlNTBhMDE1NGZjYzcyMzcwNWE3NDBiOTk2NmVjZDg5NDRiMzQ0NzI4Zjg2NTRhN2QwN2UwMjZlYzU1YzVhNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOTNkMTRhYjBhYTUxZjEzMGYxZTc2ZTIwYmEyMGU0ZDczN2RiMDYyNmU1NjZmOGI1MGE4YjBjOTQwYTE2OTc5MyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWU1YjczMmQ3MDY1MzMzNjA5OTg0OTA5ODJjODI5OWMzZGM2MWMzYTAwNjE2Yjc1MTQzODc0NTc3NjJjMzQ2ZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjE5MWI4YTgzNTUxMzJkYTViYWQzYTRkMGQ1ZmFmY2YwZTcxNjBmMTgxYzFiODgyOTFjYmUxNDAwYzlkZjNkNCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6ca5196cd5054d8faf1f1e4f78b430ae",
+      "statement": "RunTTL is currently only a reserved entitystore entry point that rejects an empty workspace and otherwise returns an empty WriteResult without mutating data, as covered by the no-expired-data test.",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go#L204-L209",
+          "version": "repo-lines-v1:sha256:a0802543dda21b87df8f09aa9f88cd9e57b20dbe757ecee0c949b85f127bbf2a:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzVkNGFhM2QzMzA0NTdlZWQzNjMzNWFkYWQzMmQ0YTVmZWJhYjMyNjdjNDVhMWRlMWVmMDI3M2ZlZTgwNTVjMiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTIyZmFhNTM1YmQyZWEzZDUyZTc0MWVkNDU0NDM1YjdmZTQ5ZTgzNTg2ZTk0M2Q5OGQ4MmJiZmIyNGQxZjVjNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOTMwN2NmOTk5ZGYzOWY2MmJjY2JmYTNhZjM0ODk1YmNkM2U2NDY3MjEzZGM1ZWI2NWIzZTc1NzEzNDRkNjA0YiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDNjMzM3ZDViNjBlY2I2ZTM3NzBiZWQ1OTM0NTUwZWUxMmYxZjViZmNkMmY1ODA1MjM2M2JlY2RkNzMzMmE1YyJ9"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go#L385-L397",
+          "version": "repo-lines-v1:sha256:2776c50ed8b758cfce46ee6263f4a69961c9303e6a18dcd0e1273f409e9dfcdc:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVjMDA2OWZjMDUxZDQzMjMyNzA4YjgzZmQ5N2ZmOGFlY2E0YzA0MzU4MTlmZTJjZjU3MmNmYTk4NjlhNjlhZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJhNDAxMzljODQwMjI0YTBhNDljYzQwYTRjMzYzZjY5YjZkMDA0MjI4YzlkOWEwYjQ4OTMyMDliN2Y0YzQyNjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE4M2QxZWEyYjdmYmJjNjM2MGZhNzMxNmUxNGQzMThlNWE3ODlmZWM5M2FkNmZkYzAwNmMwMDYyYmRhNjlmMWEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e83d17ef9bf3431da37e165da93ab943",
+      "statement": "End-to-end and integration tests exercise the documented mutation workflow through REST and services, including workspace creation, UModel validation/import/query, entity and relation writes, lifecycle visibility, quickstart search, duplicate-safe quickstart loading, and importing/querying quickstart example schemas.",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/quickstart_test.go#L10-L110",
+          "version": "repo-lines-v1:sha256:f8a65ff0edc3450a53a42d1b180d2b56fec583209e5ab061a1ed9c3efd410dbd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5OTEwNmFjZDgwZTBlN2Q2ZTI0MDliMWY3OTgzYWNjYjg2NTE4NWM4YmM2MWVjMmRhYjMyNjRhNjY4Y2ZlNzE5IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlMjJmYWE1MzViZDJlYTNkNTJlNzQxZWQ0NTQ0MzViN2ZlNDllODM1ODZlOTQzZDk4ZDgyYmJmYjI0ZDFmNWM1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlYjljNjE4YzU2MDZhYzJkZWQ4ODU5OWJjMmVlNmZmZTViYTdkYTU2YjgzYTEyYTY3MThiNTMwNTVkN2Y3MGY0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://tests/e2e/business_flow_test.go#L17-L206",
+          "version": "repo-lines-v1:sha256:683c50fb23e7e58ef5c8a09e30f87f16c601d613250995116337e6fc7ed5b2d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTkwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI0YjNjYjAzMTBlZWM2MDQ4MTViYjEwZGYyMGJlNDJkZTI3N2M1YmY5MDk1Zjk5N2RkMzczMGFjMzVkYjI0ZGYyIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJlMjJmYWE1MzViZDJlYTNkNTJlNzQxZWQ0NTQ0MzViN2ZlNDllODM1ODZlOTQzZDk4ZDgyYmJmYjI0ZDFmNWM1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiIzZGVjZDNlYjUxODQ3ODY4ZjVjNGFmMTZlZDcwZTdkZjFlZTRhZjg0OTVmZmFmZjM2MGE2YWY0OGViNzhlNTEwIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI4YzQ4NzUyNjA5MjFkNmZjOTIwY2U1NmExYzc5MjJmMThiMDdkMjJjZmI5ZDk4Mjk0MzcxZWNjNmUxY2UxZDE5In0"
+        },
+        {
+          "resource": "repo://tests/integration/umodel_import_query_test.go#L12-L44",
+          "version": "repo-lines-v1:sha256:3d43798c65c7b0175c7efc0ce217c096b98e0f386dd24d4441a45d1191a130dd:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM1ZDU4YWE3Yjk0ZjE3NWMwYzU2OWFjNmI1MDNlYjE1ZDgxMjE1MzJjMzA1ZjFmOWY1MmIwMDUwZGZjODZjY2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUyMmZhYTUzNWJkMmVhM2Q1MmU3NDFlZDQ1NDQzNWI3ZmU0OWU4MzU4NmU5NDNkOThkODJiYmZiMjRkMWY1YzUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImViOWM2MThjNTYwNmFjMmRlZDg4NTk5YmMyZWU2ZmZlNWJhN2RhNTZiODNhMTJhNjcxOGI1MzA1NWQ3ZjcwZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T03:05:58.506Z"
+  }
+}

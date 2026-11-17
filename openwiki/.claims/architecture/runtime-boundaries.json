@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bd6f1ab367315632b525d211fd0fc5e3ffc376c292a7346a58ffd80c7bdf5677",
+  "claims": [
+    {
+      "id": "claim_160b8a4ac1234c07a696c67509fbd71a",
+      "statement": "UModel 本地服务以 workspace 为隔离单位，由 bootstrap.App 组合 Workspace、GraphStore、UModel、EntityStore、Search、Query 和 AgentGateway；公开 HTTP handler 负责适配请求并委派给对应 domain service，而不是直接实现领域逻辑。",
+      "evidence": [
+        {
+          "resource": "repo://README.md",
+          "version": "repo-file-v1:sha256:5ceec67528b27d12bf1752b3649b715047bd1cf1405301096618e8dc309f5292"
+        },
+        {
+          "resource": "repo://internal/bootstrap/app.go",
+          "version": "repo-file-v1:sha256:832b665180983f47907248647ffb7323a386091ba9474752173244ca97f4f6b4"
+        }
+      ]
+    },
+    {
+      "id": "claim_59f2cbd1027a460c913a4ed140cd242b",
+      "statement": "bootstrap 的依赖组装方向是：GraphStore 被注入 UModel 和 EntityStore，UModel 为 EntityStore 提供 schema resolver，Search 被注入 UModel、EntityStore 和 Query，AgentGateway 使用 Query 以及可选的 UModel 和 EntityStore 写服务。",
+      "evidence": [
+        {
+          "resource": "repo://internal/agentgateway/service.go",
+          "version": "repo-file-v1:sha256:003b401dd2ccefc3b8721421238690f1b4aa3cbe44466610778622b28d77f3ca"
+        },
+        {
+          "resource": "repo://internal/bootstrap/app.go",
+          "version": "repo-file-v1:sha256:832b665180983f47907248647ffb7323a386091ba9474752173244ca97f4f6b4"
+        },
+        {
+          "resource": "repo://internal/entitystore/service.go",
+          "version": "repo-file-v1:sha256:deabe86a29e93ebb22e958605922cad0bc68d026f242a993d81a6b2c2a763084"
+        },
+        {
+          "resource": "repo://internal/query/service.go",
+          "version": "repo-file-v1:sha256:e60c014dc680f7f8f29424d1705ed4dfbac5aeaa704e689665e05f5043c65db4"
+        }
+      ]
+    },
+    {
+      "id": "claim_a265ea13680b441082fd0241722be65c",
+      "statement": "Workspace Service 只管理 workspace metadata，包括 ID、标签、配置、路径、状态和 resource version，不保存 UModel、实体或关系数据；删除采用 tombstone，tombstoned workspace 不能重新创建。",
+      "evidence": [
+        {
+          "resource": "repo://internal/workspace/service.go",
+          "version": "repo-file-v1:sha256:00273543d110d6a0577503f05005492c63c8f69fc434fd8c54a3e4d464a70c57"
+        },
+        {
+          "resource": "repo://internal/workspace/service_test.go",
+          "version": "repo-file-v1:sha256:6d5047e599263b96c6c12fff3e513b3359beddf1ceb742d1ca23820a4bb0baec"
+        },
+        {
+          "resource": "repo://pkg/contract/contracts.go",
+          "version": "repo-file-v1:sha256:86c70759d213bea3d9ae317b0e23ec3505ee3a9c6b7099c9dafd34e0d8cf767b"
+        }
+      ]
+    },
+    {
+      "id": "claim_226f1f19166f44dd9aa82129375209ee",
+      "statement": "file.memory 和 local.ladybug 使用持久化 workspace metadata；metadata 默认保存于 data/workspaces.json，并能从 provider-specific 目录恢复缺失的 workspace，但不会复活已删除的 tombstone。",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/app.go",
+          "version": "repo-file-v1:sha256:832b665180983f47907248647ffb7323a386091ba9474752173244ca97f4f6b4"
+        },
+        {
+          "resource": "repo://internal/workspace/service.go",
+          "version": "repo-file-v1:sha256:00273543d110d6a0577503f05005492c63c8f69fc434fd8c54a3e4d464a70c57"
+        },
+        {
+          "resource": "repo://internal/workspace/service_test.go",
+          "version": "repo-file-v1:sha256:6d5047e599263b96c6c12fff3e513b3359beddf1ceb742d1ca23820a4bb0baec"
+        }
+      ]
+    },
+    {
+      "id": "claim_e4f1bbb3154f40f29bf3da5293fa845c",
+      "statement": "GraphStore 通过 pkg/contract.GraphStore 抽象提供 workspace/schema、UModel、实体、关系读写以及 query、capabilities 和 health；provider registry 支持 memory、file.memory 和 local.ladybug，应用服务依赖抽象而非 provider 实现。",
+      "evidence": [
+        {
+          "resource": "repo://internal/bootstrap/app.go",
+          "version": "repo-file-v1:sha256:832b665180983f47907248647ffb7323a386091ba9474752173244ca97f4f6b4"
+        },
+        {
+          "resource": "repo://internal/graphstore/provider.go",
+          "version": "repo-file-v1:sha256:1cc5c5630c3ae6e6cb2b0014ddc62338a03934c096787d9f149f68a58ea8e34a"
+        },
+        {
+          "resource": "repo://pkg/contract/contracts.go",
+          "version": "repo-file-v1:sha256:86c70759d213bea3d9ae317b0e23ec3505ee3a9c6b7099c9dafd34e0d8cf767b"
+        },
+        {
+          "resource": "repo://tools/guards/architecture_guard.py",
+          "version": "repo-file-v1:sha256:ee8722533f395d205dcf997a8ee62fe24dec5e06e2f4afd1b82fa7b8c417ad50"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ce37021cbbe4c9d829486137e4339a6",
+      "statement": "UModel Service 在写入前执行基础字段和 schema validator 校验，随后写入 GraphStore、更新 workspace 内 schema index，并在配置 Search 时索引模型文档；删除会同步删除搜索文档，索引失败以 warning 返回，RebuildIndex 从 GraphStore snapshot 重建内存索引。",
+      "evidence": [
+        {
+          "resource": "repo://internal/umodel/service.go",
+          "version": "repo-file-v1:sha256:4616c5bda08d1fbc39ee9d0e1b498f49431ede2b0d68813cdb90e65a85c7a11b"
+        }
+      ]
+    },
+    {
+      "id": "claim_42e58d8ee2f642ffa514fd9102d51116",
+      "statement": "UModel 的 API-originated import 受 importRoot 限制：默认限制在 server 当前工作目录，设为 / 才允许任意路径；trusted bundled sample import 不受该限制。",
+      "evidence": [
+        {
+          "resource": "repo://cmd/umodel-server/main.go",
+          "version": "repo-file-v1:sha256:19113a0584ecc338e7a90f616826bd6b27bbb307b1261a5fe7d5944518d280d3"
+        },
+        {
+          "resource": "repo://internal/bootstrap/app.go",
+          "version": "repo-file-v1:sha256:832b665180983f47907248647ffb7323a386091ba9474752173244ca97f4f6b4"
+        },
+        {
+          "resource": "repo://internal/umodel/import_confine_test.go",
+          "version": "repo-file-v1:sha256:7c9833c6963a121faa7140b8298724ff83259909be565147aa81b33e78f69e27"
+        },
+        {
+          "resource": "repo://internal/umodel/service.go",
+          "version": "repo-file-v1:sha256:4616c5bda08d1fbc39ee9d0e1b498f49431ede2b0d68813cdb90e65a85c7a11b"
+        }
+      ]
+    },
+    {
+      "id": "claim_8382a45103c2487e84fb95056c46976b",
+      "statement": "EntityStore 是运行时实体和关系的写入边界：它通过 UModel resolver 校验 CMS 2.0 payload，支持 partial success、Create/Update/Expire/Delete 语义和按 workspace 加幂等 key 的结果缓存，然后把有效 batch 交给 GraphStore。",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go",
+          "version": "repo-file-v1:sha256:deabe86a29e93ebb22e958605922cad0bc68d026f242a993d81a6b2c2a763084"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go",
+          "version": "repo-file-v1:sha256:3ebf5493613d393e95d56083d37ffb806569a6ecd0f88683c612636690cc7002"
+        }
+      ]
+    },
+    {
+      "id": "claim_1fcdbad6f80046b1a1a56085c4ba264a",
+      "statement": "EntityStore 和 UModel 的搜索索引更新是写入后的辅助动作：索引或删除失败不会撤销已接受的 GraphStore 写入，而会以 WriteResult warning 暴露；实体过期从当前查询隐藏，但时间范围历史查询仍可见。",
+      "evidence": [
+        {
+          "resource": "repo://internal/entitystore/service.go",
+          "version": "repo-file-v1:sha256:deabe86a29e93ebb22e958605922cad0bc68d026f242a993d81a6b2c2a763084"
+        },
+        {
+          "resource": "repo://internal/entitystore/service_test.go",
+          "version": "repo-file-v1:sha256:3ebf5493613d393e95d56083d37ffb806569a6ecd0f88683c612636690cc7002"
+        },
+        {
+          "resource": "repo://internal/umodel/service.go",
+          "version": "repo-file-v1:sha256:4616c5bda08d1fbc39ee9d0e1b498f49431ede2b0d68813cdb90e65a85c7a11b"
+        }
+      ]
+    },
+    {
+      "id": "claim_de56c3d994d0446a9a675678e00aa172",
+      "statement": "Query Service 是模型、实体和拓扑的统一公共读取面：它规范化 query mode/format，调用 planner 生成 plan，按 plan 在 GraphStore 执行或把带 keyword/vector/hyper 搜索条件的查询路由到 Search Service，并产生 explain 元数据。",
+      "evidence": [
+        {
+          "resource": "repo://internal/query/search_routing_test.go",
+          "version": "repo-file-v1:sha256:9031baa601826191d8df7e6daa0a2372d6e1852131b2336a4a7ff7f2c0e47953"
+        },
+        {
+          "resource": "repo://internal/query/service.go",
+          "version": "repo-file-v1:sha256:e60c014dc680f7f8f29424d1705ed4dfbac5aeaa704e689665e05f5043c65db4"
+        },
+        {
+          "resource": "repo://pkg/contract/contracts.go",
+          "version": "repo-file-v1:sha256:86c70759d213bea3d9ae317b0e23ec3505ee3a9c6b7099c9dafd34e0d8cf767b"
+        }
+      ]
+    },
+    {
+      "id": "claim_edd65ee1009b48669956d1272a4ef5c6",
+      "statement": "unified-model 当前只支持空 mode 归一化后的 plan；其他 mode 返回 CodeNotImplemented 和迁移信息，provider deadline 超时映射为 CodeTimeout，而客户端主动取消不会被误报为 provider timeout。",
+      "evidence": [
+        {
+          "resource": "repo://internal/query/mode_test.go",
+          "version": "repo-file-v1:sha256:c0e14ef0f69eeff9141973a023750b4069eb458a231aeb2c153c776eacb2a2b3"
+        },
+        {
+          "resource": "repo://internal/query/service.go",
+          "version": "repo-file-v1:sha256:e60c014dc680f7f8f29424d1705ed4dfbac5aeaa704e689665e05f5043c65db4"
+        },
+        {
+          "resource": "repo://internal/query/timeout_test.go",
+          "version": "repo-file-v1:sha256:8e0762168d47c940bf3608bd2f4f17539f02656bb0885cd015e9260cad9d03ee"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9b12ea069564901833ce1e1654b0d30",
+      "statement": "Search Service 组合 Provider 与 Embedder，提供 keyword、vector 和 hybrid 检索；hybrid 对两路结果执行带权 Reciprocal Rank Fusion，并暴露 provider capability、health、provider 名称和 embed model。",
+      "evidence": [
+        {
+          "resource": "repo://internal/search/service.go",
+          "version": "repo-file-v1:sha256:1b1aea504a6cf4ac1b0d5f7a774b95876a2b96ac209c5a071ee16743ca5c82ae"
+        },
+        {
+          "resource": "repo://internal/search/service_test.go",
+          "version": "repo-file-v1:sha256:5cca92953ffad29c8212b6572c42b8473d576517678359c2aef311d9cacdce9d"
+        }
+      ]
+    },
+    {
+      "id": "claim_5b910369e7274e2bbc52e6cce98185bc",
+      "statement": "AgentGateway 是 agent-facing adapter：Discovery 提供工具、只读元数据资源和 next actions，查询工具委派 Query Service，写工具委派 UModel 或 EntityStore；umodel_import、entity_write 和 entity_expire 默认禁用，只有显式启用并注入写服务后才可用。",
+      "evidence": [
+        {
+          "resource": "repo://internal/agentgateway/service.go",
+          "version": "repo-file-v1:sha256:003b401dd2ccefc3b8721421238690f1b4aa3cbe44466610778622b28d77f3ca"
+        },
+        {
+          "resource": "repo://internal/agentgateway/service_test.go",
+          "version": "repo-file-v1:sha256:c566fa5f5331fc964773d81309a38bc764f40cdc61ed2caee07fad2f2f83e451"
+        }
+      ]
+    },
+    {
+      "id": "claim_72140826f3b04a47a424ae0e3cf4b6f5",
+      "statement": "AgentGateway resources 只暴露 workspace 概览、schema index、query templates 和 tool metadata，runtime rows 必须通过 Query API 返回，资源读取不会泄露运行时结果。",
+      "evidence": [
+        {
+          "resource": "repo://internal/agentgateway/service.go",
+          "version": "repo-file-v1:sha256:003b401dd2ccefc3b8721421238690f1b4aa3cbe44466610778622b28d77f3ca"
+        },
+        {
+          "resource": "repo://internal/agentgateway/service_test.go",
+          "version": "repo-file-v1:sha256:c566fa5f5331fc964773d81309a38bc764f40cdc61ed2caee07fad2f2f83e451"
+        }
+      ]
+    },
+    {
+      "id": "claim_f6716a2f0e104619aa8d7612c366e5d4",
+      "statement": "仓库架构 guard 禁止新增独立的 domain read API，并限制业务模块直接导入 GraphStore provider implementation，从而保护 Query Service 作为公共读取边界和 GraphStore 抽象边界。",
+      "evidence": [
+        {
+          "resource": "repo://tools/guards/architecture_guard.py",
+          "version": "repo-file-v1:sha256:ee8722533f395d205dcf997a8ee62fe24dec5e06e2f4afd1b82fa7b8c417ad50"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.0",
+    "at": "2026-09-10T03:05:58.506Z"
+  }
+}

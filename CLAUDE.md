@@ -84,3 +84,11 @@ git diff --check
 ```
 
 Final response should include changed files, verification run, and unrelated dirty files intentionally left untouched.
+
+<!-- OPENWIKI:START -->
+
+## OpenWiki
+
+See [AGENTS.md](AGENTS.md) for OpenWiki agent instructions.
+
+<!-- OPENWIKI:END -->

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/runtime-boundaries.md": {
+      "pageVersion": "sha256:bd6f1ab367315632b525d211fd0fc5e3ffc376c292a7346a58ffd80c7bdf5677",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/concepts/query-planning-and-execution.md": {
+      "pageVersion": "sha256:91619d7f9326c2f6284d0bbd1d500363375fdec4ab8f61837f24c2d7fc36b23b",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/concepts/search-indexing.md": {
+      "pageVersion": "sha256:8a70e553591e81295bc69a8a662111a4fb312ed85735594a82a82119d4261679",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/concepts/umodel-schema-validation.md": {
+      "pageVersion": "sha256:9e876a0689b61046ff3611a82d9a7e5239088a501caebe0cc67d34fa03228c34",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/concepts/workspace-and-object-graph.md": {
+      "pageVersion": "sha256:0754bd25a0dba754d3f46287864352e2522b535430506955d95fcf7a03bfbecd",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/integrations/public-surfaces.md": {
+      "pageVersion": "sha256:c111859455f12259d7066176a81a8b865a7408a5d1c6a4bac19e2664f792275b",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/operations/providers-and-persistence.md": {
+      "pageVersion": "sha256:54a47f3b49a4dc5dcd6af5bfbab5f07defcf0a75c2b3436b6e715a0295df7f67",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/testing/query-and-contract-coverage.md": {
+      "pageVersion": "sha256:c78ea16eb04a11f5160b54670ca8be861633f527a056a58f669af08359ee9dbd",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    },
+    "/openwiki/workflows/import-and-mutate-data.md": {
+      "pageVersion": "sha256:d1b7b60f330d430efa8cdb254941151b20b8c0c6bbaac5ba7a30a7bba529babd",
+      "completedBy": "openwiki/0.5.0",
+      "completedRunId": "e1d0dc61-f4a2-48c2-886d-1bfd748beeb2",
+      "gitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+      "sourceFingerprint": "sha256:a680008173d00e664aef54c12a64bac866d2ad4119578b95f095ab479c2f846e"
+    }
+  }
+}

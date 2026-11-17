@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "runId": "24e0f78c-1ddf-4b02-90a9-595f008ab6d8",
+  "mode": "update",
+  "phase": "planning",
+  "startedAt": "2026-09-10T04:45:57.664Z",
+  "language": "zh-CN",
+  "languageChanged": false,
+  "requiredRewritePages": [],
+  "initialPages": [
+    "/openwiki/architecture/runtime-boundaries.md",
+    "/openwiki/concepts/query-planning-and-execution.md",
+    "/openwiki/concepts/search-indexing.md",
+    "/openwiki/concepts/umodel-schema-validation.md",
+    "/openwiki/concepts/workspace-and-object-graph.md",
+    "/openwiki/integrations/public-surfaces.md",
+    "/openwiki/operations/providers-and-persistence.md",
+    "/openwiki/testing/query-and-contract-coverage.md",
+    "/openwiki/workflows/import-and-mutate-data.md"
+  ],
+  "sourceFingerprint": "sha256:76e9d7f0c4ce24506aa910ced73f785e95b4c6d0ed8bcbeb70b3c34a4c73d7cf",
+  "targetGitHead": "c36450a2e9b7c398aa1d79c42cb9d13a91cc6f8b",
+  "actor": {
+    "producerActor": "openwiki/0.5.0",
+    "metadataModel": "claude-sonnet-4-6"
+  },
+  "previousLastUpdate": {
+    "updatedAt": "2026-09-10T04:44:38.550Z",
+    "command": "init",
+    "model": "gpt-5.5",
+    "status": "interrupted",
+    "language": "zh-CN"
+  },
+  "beforeContentSnapshot": "49c783d963ac8dbb33872b8ed71ddf79472add0001914feb2607567c31e40c09",
+  "preparedWiki": {
+    "generatedProvenance": [
+      {
+        "page": "/openwiki/architecture/runtime-boundaries.md",
+        "bodyHash": "80824f64ecf290e3f4bb2cc42aa8a816d972bc98c06a636d5cc0b0b0fd73e9ba",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/concepts/query-planning-and-execution.md",
+        "bodyHash": "4fb1003c08792083ffbd2e05676567d70cfc4adb206fc3c4ea3dfa25b4c8f210",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/concepts/search-indexing.md",
+        "bodyHash": "05e2774373f128982d7061c8682130ae252312f5f288c9b0ea3b64b369910519",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/concepts/umodel-schema-validation.md",
+        "bodyHash": "9886dedcb2603ae73af61d959f0301a2cb0480fd0e56f8c9ffa6129860e01f86",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/concepts/workspace-and-object-graph.md",
+        "bodyHash": "7f763f8871ffebbb42280ad259adb86101cc020715b2206d3ebe5155783e1b67",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/integrations/public-surfaces.md",
+        "bodyHash": "3b291c374f527bfd9c355dae59aaca085809793feae9c76e398b364b0c0b908e",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/operations/providers-and-persistence.md",
+        "bodyHash": "139890dbc124a9e4d534a7f4c21b4140fad8ece48e63221ac7fd540f3a6ffde0",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/testing/query-and-contract-coverage.md",
+        "bodyHash": "d4d68457041490f33d9e3a456fd105c6b1c230852b9e9d55d574a9fb2217537a",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      },
+      {
+        "page": "/openwiki/workflows/import-and-mutate-data.md",
+        "bodyHash": "d34cfd9a2cd9a087be3e943f3c5d1d307924b365ebe9c1041e18afc0a0834d86",
+        "generated": {
+          "by": "openwiki/0.5.0",
+          "at": "2026-09-10T03:05:58.506Z"
+        }
+      }
+    ]
+  }
+}
